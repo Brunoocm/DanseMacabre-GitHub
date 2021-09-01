@@ -7,11 +7,12 @@ using UnityEngine;
 public class CharacterController : MonoBehaviour
 {
     private InputHandler _input;
-
-    public bool teste;
+    public Transform target;
 
     [SerializeField]
-    private bool RotateTowardMouse;
+    private bool RotateTowardMouse;    
+    [SerializeField]
+    private bool RotateTowardEnemy;
     [SerializeField]
     private bool WalkWithCameraPosition;
 
@@ -34,23 +35,18 @@ public class CharacterController : MonoBehaviour
     }
 
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         targetVector = new Vector3(_input.InputVector.x, 0, _input.InputVector.y);
         var movementVector = MoveTowardTarget(targetVector);
 
-        if (!RotateTowardMouse)
-        {
-            RotateTowardMovementVector(movementVector);
-        }
-        if (RotateTowardMouse)
-        {
-            RotateFromMouseVector();
-        }
+        if (!RotateTowardMouse) RotateTowardMovementVector(movementVector);
+        else RotateTowardMouseVector();
+
+        if (RotateTowardEnemy) transform.LookAt(target);
     }
 
-    private void RotateFromMouseVector()
+    private void RotateTowardMouseVector()
     {
         Ray ray = Camera.ScreenPointToRay(_input.MousePosition);
 
@@ -77,6 +73,7 @@ public class CharacterController : MonoBehaviour
     private void RotateTowardMovementVector(Vector3 movementDirection)
     {
         if(movementDirection.magnitude == 0) { return; }
+
         var rotation = Quaternion.LookRotation(movementDirection);
         transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, RotationSpeed);
     }
