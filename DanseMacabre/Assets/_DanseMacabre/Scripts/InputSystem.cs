@@ -2,14 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InputHandler : MonoBehaviour
+public class InputSystem : MonoBehaviour
 {
     public Vector2 InputVector { get; private set; }
     public Vector3 MousePosition { get; private set; }
+
+    private MovementHandler movementHandler;
+
     [HideInInspector]
     public bool walking;
 
-    void Update()
+    private void Awake()
+    {
+        movementHandler = GetComponent<MovementHandler>();
+    }
+
+    private void Update()
     {
         var h = Input.GetAxisRaw("Horizontal");
         var v = Input.GetAxisRaw("Vertical");
@@ -19,8 +27,8 @@ public class InputHandler : MonoBehaviour
 
         if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.S))
         {
-            walking = true;
+            movementHandler.TryMove(new Vector3(InputVector.x, 0, InputVector.y));
         }   
-        else walking = false;
+        
     }
 }

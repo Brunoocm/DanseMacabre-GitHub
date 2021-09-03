@@ -137,7 +137,6 @@ GameObject:
   - component: {fileID: 57801341}
   - component: {fileID: 57801340}
   - component: {fileID: 57801339}
-  - component: {fileID: 57801338}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -145,19 +144,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &57801338
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 57801337}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1cce3c87da4f1748973982edc107749, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  walking: 0
 --- !u!114 &57801339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,14 +156,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28d2220b4dd7d7f4895a70bebacb551e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1527632036}
-  RotateTowardMouse: 0
-  RotateTowardEnemy: 0
-  WalkWithCameraPosition: 0
+  canMove: 1
   MovementSpeed: 5
   RotationSpeed: 3
+  rotationType: 0
   Camera: {fileID: 1478443186}
-  targetVector: {x: 0, y: 0, z: 0}
+  target: {fileID: 1527632036}
 --- !u!114 &57801340
 MonoBehaviour:
   m_ObjectHideFlags: 0
