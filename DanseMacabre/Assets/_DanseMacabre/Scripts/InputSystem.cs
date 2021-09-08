@@ -8,6 +8,7 @@ public class InputSystem : MonoBehaviour
     public Vector3 MousePosition { get; private set; }
 
     private MovementHandler movementHandler;
+    private CombatSystem combatSystem;
 
     [HideInInspector]
     public bool walking;
@@ -15,6 +16,7 @@ public class InputSystem : MonoBehaviour
     private void Awake()
     {
         movementHandler = GetComponent<MovementHandler>();
+        combatSystem = GetComponent<CombatSystem>( );
     }
 
     private void Update()
@@ -30,5 +32,9 @@ public class InputSystem : MonoBehaviour
             movementHandler.TryMove(new Vector3(InputVector.x, 0, InputVector.y));
         }   
         
+        if(Input.GetKeyDown(KeyCode.LeftControl))
+        {
+            combatSystem.TryTarget( );
+        }
     }
 }

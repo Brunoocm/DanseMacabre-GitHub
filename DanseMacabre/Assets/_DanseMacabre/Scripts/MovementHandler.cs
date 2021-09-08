@@ -10,23 +10,19 @@ public class MovementHandler : MonoBehaviour
     public bool canMove = true;
     [SerializeField] private float MovementSpeed;
     [SerializeField] private float RotationSpeed;
+    [SerializeField] private bool WalkWithCameraPosition;
 
-    [SerializeField] private RotationType rotationType;
-    /*[SerializeField] private bool WalkWithCameraPosition;*/
+    [Header("Enemy Control")]
+    [SerializeField] private bool rotateTowardEnemy;
+    public Transform enemyPosition;
 
     [Header( "Objects" )]
-    [SerializeField] private Camera Camera;
-    public Transform target;
+    [SerializeField] private Transform cameraFollowTransform;
+    [SerializeField] private Transform visualsTransform;
 
     //Private
     private Rigidbody rb;
     private Vector3 lastVelocity;
-
-    private enum RotationType
-    {
-        RotateTowardEnemy,
-        RotateWithCamera,
-    }
 
     private void Awake()
     {
@@ -36,47 +32,32 @@ public class MovementHandler : MonoBehaviour
     private void Update()
     {
         CalculateRotation( );
+        rotateTowardEnemy = enemyPosition != null ? true : false;
+    }
+
+    private void CalculateRotation()
+    {
+        if ( rotateTowardEnemy )
+            visualsTransform.LookAt( enemyPosition );
+
+       RotateTowardMovementVector( lastVelocity );
     }
 
     public void TryMove( Vector3 targetVector )
     {
         if ( !canMove )
             return;
-        Debug.Log( "TryMove" );
 
         var movementVector = MoveTowardTarget( targetVector.normalized );
-        lastVelocity = targetVector;
-    }
-
-    private void CalculateRotation()
-    {
-        RotateTowardMovementVector( lastVelocity );
-
-        if ( rotationType == RotationType.RotateTowardEnemy )
-            transform.LookAt( target );
-
-        /*        if (rotationType == RotationType.RotateTowardMouse) RotateTowardMouseVector();
-        else RotateTowardMovementVector(lastVelocity);*/
-    }
-
-    private void RotateTowardMouseVector()
-    {
-        Ray ray = Camera.ScreenPointToRay( Input.mousePosition );
-
-        if ( Physics.Raycast( ray , out RaycastHit hitInfo , maxDistance: 300f ) )
-        {
-            var target = hitInfo.point;
-            target.y = transform.position.y;
-            transform.LookAt( target );
-        }
+        lastVelocity = movementVector;
     }
 
     private Vector3 MoveTowardTarget( Vector3 targetVector )
     {
         var speed = MovementSpeed * Time.deltaTime;
 
-        if ( rotationType == RotationType.RotateWithCamera )
-            targetVector = Quaternion.Euler( 0 , Camera.gameObject.transform.rotation.eulerAngles.y , 0 ) * targetVector;
+        if ( WalkWithCameraPosition )
+            targetVector = Quaternion.Euler( 0 , cameraFollowTransform.rotation.eulerAngles.y , 0 ) * targetVector;
 
         var targetPosition = transform.position + targetVector * speed;
         transform.position = targetPosition;
@@ -89,6 +70,6 @@ public class MovementHandler : MonoBehaviour
         { return; }
 
         var rotation = Quaternion.LookRotation( movementDirection );
-        transform.rotation = Quaternion.RotateTowards( transform.rotation , rotation , RotationSpeed );
+        visualsTransform.rotation = Quaternion.RotateTowards( visualsTransform.transform.rotation , rotation , RotationSpeed );
     }
 }
