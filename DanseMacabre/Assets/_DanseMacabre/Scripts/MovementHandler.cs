@@ -10,14 +10,14 @@ public class MovementHandler : MonoBehaviour
     public bool canMove = true;
     [SerializeField] private float MovementSpeed;
     [SerializeField] private float RotationSpeed;
-    [SerializeField] private bool WalkWithCameraPosition;
 
     [Header("Enemy Control")]
     [SerializeField] private bool rotateTowardEnemy;
     public Transform enemyPosition;
 
     [Header( "Objects" )]
-    [SerializeField] private Transform cameraFollowTransform;
+    [SerializeField] private Transform normalFollowTransform;
+    [SerializeField] private Transform combatFollowTransform;
     [SerializeField] private Transform visualsTransform;
 
     //Private
@@ -32,17 +32,9 @@ public class MovementHandler : MonoBehaviour
     private void Update()
     {
         CalculateRotation( );
-        rotateTowardEnemy = enemyPosition != null ? true : false;
     }
 
-    private void CalculateRotation()
-    {
-        if ( rotateTowardEnemy )
-            visualsTransform.LookAt( enemyPosition );
-
-       RotateTowardMovementVector( lastVelocity );
-    }
-
+    #region Movimentação
     public void TryMove( Vector3 targetVector )
     {
         if ( !canMove )
@@ -52,16 +44,30 @@ public class MovementHandler : MonoBehaviour
         lastVelocity = movementVector;
     }
 
+    //Calcula a direção da movimentação baseada no input e direção da câmera
+    //Retorna um vetor para que a função de rotação saiba a direção atual
     private Vector3 MoveTowardTarget( Vector3 targetVector )
     {
         var speed = MovementSpeed * Time.deltaTime;
 
-        if ( WalkWithCameraPosition )
-            targetVector = Quaternion.Euler( 0 , cameraFollowTransform.rotation.eulerAngles.y , 0 ) * targetVector;
+        if ( !rotateTowardEnemy )
+            targetVector = Quaternion.Euler( 0 , normalFollowTransform.rotation.eulerAngles.y , 0 ) * targetVector;
+        else
+            targetVector = Quaternion.Euler( 0 , combatFollowTransform.rotation.eulerAngles.y , 0 ) * targetVector;
 
         var targetPosition = transform.position + targetVector * speed;
         transform.position = targetPosition;
         return targetVector;
+    }
+    #endregion
+
+    #region Rotação do Personagem
+    private void CalculateRotation()
+    {
+        if ( rotateTowardEnemy )
+            visualsTransform.LookAt( enemyPosition );
+
+        RotateTowardMovementVector( lastVelocity );
     }
 
     private void RotateTowardMovementVector( Vector3 movementDirection )
@@ -72,4 +78,13 @@ public class MovementHandler : MonoBehaviour
         var rotation = Quaternion.LookRotation( movementDirection );
         visualsTransform.rotation = Quaternion.RotateTowards( visualsTransform.transform.rotation , rotation , RotationSpeed );
     }
+    #endregion
+
+    #region Funções Públicas
+    public void RotateTowardTarget()
+    {
+        rotateTowardEnemy = rotateTowardEnemy ? false : true;
+    }
+
+    #endregion
 }

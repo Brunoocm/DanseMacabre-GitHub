@@ -10,7 +10,7 @@ public class StatesSystem : MonoBehaviour
     public Enemy currentEnemy;
     public bool hasEnemy;
 
-    private MovementHandler movementHandler;
+    public MovementHandler movementHandler;
     private CombatSystem combatSystem;
 
     private void Awake()
@@ -28,10 +28,7 @@ public class StatesSystem : MonoBehaviour
 
     private void UpdateMovementHandler()
     {
-        if ( hasEnemy )
-            movementHandler.enemyPosition = currentEnemy.enemy.transform;
-        else
-            movementHandler.enemyPosition = this.transform;
+            
     }
 
     private void UpdateCombatSystem()

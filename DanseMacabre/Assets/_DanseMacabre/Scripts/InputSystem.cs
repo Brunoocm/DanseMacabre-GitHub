@@ -9,6 +9,7 @@ public class InputSystem : MonoBehaviour
 
     private MovementHandler movementHandler;
     private CombatSystem combatSystem;
+    private CameraHandler cameraHandler;
 
     [HideInInspector]
     public bool walking;
@@ -17,6 +18,7 @@ public class InputSystem : MonoBehaviour
     {
         movementHandler = GetComponent<MovementHandler>();
         combatSystem = GetComponent<CombatSystem>( );
+        cameraHandler = GetComponent<CameraHandler>( );
     }
 
     private void Update()
@@ -35,6 +37,8 @@ public class InputSystem : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.LeftControl))
         {
             combatSystem.TryTarget( );
+            movementHandler.RotateTowardTarget( );
+            cameraHandler.SwitchTarget( );
         }
     }
 }

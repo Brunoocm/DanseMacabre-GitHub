@@ -5,9 +5,9 @@ using Cinemachine;
 
 public class CameraHandler : MonoBehaviour
 {
-    [SerializeField] private Transform cameraTargetTransform;
+    [SerializeField] private Transform normalCameraTarget;
+    [SerializeField] private Transform combatCameraTarget;
     [SerializeField] private float rotationPower = 3f;
-    [SerializeField] private bool yInverted = true;
     [SerializeField] private bool isControlling = true;
     [SerializeField] private CinemachineVirtualCamera camera;
 
@@ -16,35 +16,42 @@ public class CameraHandler : MonoBehaviour
     private void Awake()
     {
         statesSystem = GetComponent<StatesSystem>( );
+        camera.Follow = normalCameraTarget;
+        isControlling = true;
     }
 
     private void Update()
     {
-        if ( statesSystem.hasEnemy )
-        {
-            isControlling = false;
-            camera.LookAt = statesSystem.currentEnemy.enemy.transform;
-        }
+        if ( isControlling )
+            AimControl( );
         else
         {
-            isControlling = true;
-            camera.LookAt = null;
+            if ( statesSystem.currentEnemy.enemy != null )
+                combatCameraTarget.LookAt( statesSystem.currentEnemy.enemy.transform );
+            normalCameraTarget.rotation = combatCameraTarget.rotation;
         }
+    }
 
-        if ( !isControlling )
-            return;
+    public void SwitchTarget()
+    {
+        camera.Follow = camera.Follow == normalCameraTarget ? combatCameraTarget : normalCameraTarget;
+        isControlling = isControlling ? false : true;
+    }
 
-        if(!yInverted) cameraTargetTransform.rotation *= Quaternion.AngleAxis( Input.GetAxis( "Mouse Y" ) * rotationPower , Vector3.right );
-        else cameraTargetTransform.rotation *= Quaternion.AngleAxis( Input.GetAxis( "Mouse Y" ) * rotationPower , Vector3.left );
-        cameraTargetTransform.rotation *= Quaternion.AngleAxis( Input.GetAxis( "Mouse X" ) * rotationPower , Vector3.up );
+    private void AimControl()
+    {
+        normalCameraTarget.rotation *= Quaternion.AngleAxis( Input.GetAxis( "Mouse X" ) * rotationPower , Vector3.up );
+        normalCameraTarget.rotation *= Quaternion.AngleAxis( Input.GetAxis( "Mouse Y" ) * rotationPower , Vector3.left );
 
-        var angles = cameraTargetTransform.localEulerAngles;
-        var angle = cameraTargetTransform.localEulerAngles.x;
+        var angles = normalCameraTarget.localEulerAngles;
+        var angle = normalCameraTarget.localEulerAngles.x;
         angles.z = 0;
 
-        if ( angle > 180 && angle < 340 ) angles.x = 340;
-        else if ( angle < 180 && angle > 40 ) angles.x = 40;
+        if ( angle > 180 && angle < 340 )
+            angles.x = 340;
+        else if ( angle < 180 && angle > 40 )
+            angles.x = 40;
 
-        cameraTargetTransform.localEulerAngles = angles;
+        normalCameraTarget.localEulerAngles = angles;
     }
 }
