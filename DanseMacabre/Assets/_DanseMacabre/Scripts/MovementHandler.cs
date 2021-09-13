@@ -11,22 +11,18 @@ public class MovementHandler : MonoBehaviour
     [SerializeField] private float MovementSpeed;
     [SerializeField] private float RotationSpeed;
 
-    [SerializeField] private RotationType rotationType;
-    /*[SerializeField] private bool WalkWithCameraPosition;*/
+    [Header("Enemy Control")]
+    [SerializeField] private bool rotateTowardEnemy;
+    public Transform enemyPosition;
 
     [Header( "Objects" )]
-    [SerializeField] private Camera Camera;
-    public Transform target;
+    [SerializeField] private Transform normalFollowTransform;
+    [SerializeField] private Transform combatFollowTransform;
+    [SerializeField] private Transform visualsTransform;
 
     //Private
     private Rigidbody rb;
     private Vector3 lastVelocity;
-
-    private enum RotationType
-    {
-        RotateTowardEnemy,
-        RotateWithCamera,
-    }
 
     private void Awake()
     {
@@ -38,49 +34,40 @@ public class MovementHandler : MonoBehaviour
         CalculateRotation( );
     }
 
+    #region Movimentação
     public void TryMove( Vector3 targetVector )
     {
         if ( !canMove )
             return;
-        Debug.Log( "TryMove" );
 
         var movementVector = MoveTowardTarget( targetVector.normalized );
-        lastVelocity = targetVector;
+        lastVelocity = movementVector;
     }
 
-    private void CalculateRotation()
-    {
-        RotateTowardMovementVector( lastVelocity );
-
-        if ( rotationType == RotationType.RotateTowardEnemy )
-            transform.LookAt( target );
-
-        /*        if (rotationType == RotationType.RotateTowardMouse) RotateTowardMouseVector();
-        else RotateTowardMovementVector(lastVelocity);*/
-    }
-
-    private void RotateTowardMouseVector()
-    {
-        Ray ray = Camera.ScreenPointToRay( Input.mousePosition );
-
-        if ( Physics.Raycast( ray , out RaycastHit hitInfo , maxDistance: 300f ) )
-        {
-            var target = hitInfo.point;
-            target.y = transform.position.y;
-            transform.LookAt( target );
-        }
-    }
-
+    //Calcula a direção da movimentação baseada no input e direção da câmera
+    //Retorna um vetor para que a função de rotação saiba a direção atual
     private Vector3 MoveTowardTarget( Vector3 targetVector )
     {
         var speed = MovementSpeed * Time.deltaTime;
 
-        if ( rotationType == RotationType.RotateWithCamera )
-            targetVector = Quaternion.Euler( 0 , Camera.gameObject.transform.rotation.eulerAngles.y , 0 ) * targetVector;
+        if ( !rotateTowardEnemy )
+            targetVector = Quaternion.Euler( 0 , normalFollowTransform.rotation.eulerAngles.y , 0 ) * targetVector;
+        else
+            targetVector = Quaternion.Euler( 0 , combatFollowTransform.rotation.eulerAngles.y , 0 ) * targetVector;
 
         var targetPosition = transform.position + targetVector * speed;
         transform.position = targetPosition;
         return targetVector;
+    }
+    #endregion
+
+    #region Rotação do Personagem
+    private void CalculateRotation()
+    {
+        if ( rotateTowardEnemy )
+            visualsTransform.LookAt( enemyPosition );
+
+        RotateTowardMovementVector( lastVelocity );
     }
 
     private void RotateTowardMovementVector( Vector3 movementDirection )
@@ -89,6 +76,15 @@ public class MovementHandler : MonoBehaviour
         { return; }
 
         var rotation = Quaternion.LookRotation( movementDirection );
-        transform.rotation = Quaternion.RotateTowards( transform.rotation , rotation , RotationSpeed );
+        visualsTransform.rotation = Quaternion.RotateTowards( visualsTransform.transform.rotation , rotation , RotationSpeed );
     }
+    #endregion
+
+    #region Funções Públicas
+    public void RotateTowardTarget()
+    {
+        rotateTowardEnemy = rotateTowardEnemy ? false : true;
+    }
+
+    #endregion
 }
