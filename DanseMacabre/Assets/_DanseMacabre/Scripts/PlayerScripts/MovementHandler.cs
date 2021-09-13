@@ -34,8 +34,6 @@ public class MovementHandler : MonoBehaviour
     private void Update()
     {
         CalculateRotation( );
-
-        if()
     }
 
     #region Movimentação
