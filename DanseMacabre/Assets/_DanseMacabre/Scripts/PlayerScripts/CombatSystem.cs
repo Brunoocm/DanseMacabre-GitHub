@@ -11,12 +11,17 @@ public class CombatSystem : MonoBehaviour
     private void Update()
     {
         hasEnemy = currentEnemy.enemy != null ? true : false;
+
+        currentEnemy.UpdateEnemy( currentEnemy.enemy );
     }
 
     public void TryTarget()
     {
         if(currentEnemy != null)
+        {
             currentEnemy.UpdateEnemy( GameObject.FindGameObjectWithTag( "Enemy" ) );
+            GetComponent<MovementHandler>().RotateTowardTarget( currentEnemy.enemy, true );
+        }
 
         if ( hasEnemy )
             UnlockTarget( );
@@ -26,6 +31,7 @@ public class CombatSystem : MonoBehaviour
     {
         currentEnemy.enemy = null;
         currentEnemy.UpdateEnemy( null );
+        GetComponent<MovementHandler>( ).RotateTowardTarget( null, false );
     }
 }
 

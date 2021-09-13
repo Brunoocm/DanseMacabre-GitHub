@@ -23,22 +23,29 @@ public class MovementHandler : MonoBehaviour
     //Private
     private Rigidbody rb;
     private Vector3 lastVelocity;
+    [HideInInspector] public bool isWalking;
 
     private void Awake()
     {
+        rotateTowardEnemy = false;
         rb = GetComponent<Rigidbody>( );
     }
 
     private void Update()
     {
         CalculateRotation( );
+
+        if()
     }
 
     #region Movimentação
     public void TryMove( Vector3 targetVector )
     {
         if ( !canMove )
+        {
+            isWalking = false;
             return;
+        }
 
         var movementVector = MoveTowardTarget( targetVector.normalized );
         lastVelocity = movementVector;
@@ -81,9 +88,14 @@ public class MovementHandler : MonoBehaviour
     #endregion
 
     #region Funções Públicas
-    public void RotateTowardTarget()
+    public void RotateTowardTarget(GameObject enemy, bool _rotateTowardEnemy)
     {
-        rotateTowardEnemy = rotateTowardEnemy ? false : true;
+        rotateTowardEnemy = _rotateTowardEnemy;
+
+        if ( rotateTowardEnemy && enemy != null )
+            enemyPosition = enemy.transform;
+        else if( !_rotateTowardEnemy && enemy == null )
+            enemyPosition = null;
     }
 
     #endregion

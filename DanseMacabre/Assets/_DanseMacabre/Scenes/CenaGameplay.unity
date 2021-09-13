@@ -182,6 +182,7 @@ MonoBehaviour:
   normalFollowTransform: {fileID: 1589674837}
   combatFollowTransform: {fileID: 705579498}
   visualsTransform: {fileID: 1272786464}
+  isWalking: 0
 --- !u!114 &57801340
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,7 +195,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1cce3c87da4f1748973982edc107749, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walking: 0
 --- !u!136 &57801341
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -237,19 +237,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 57801337}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4df9aa06ea93be344963739933ce7dd8, type: 3}
+  m_Script: {fileID: 11500000, guid: 862d3781d072e234dbbffc6c1d456f94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   masterState: 0
   combatState: 0
+  hasEnemy: 0
   currentEnemy:
     enemy: {fileID: 0}
     enemyStates: {fileID: 0}
     enemyCombatSystem: {fileID: 0}
     enemyMasterState: 0
     enemyCombatState: 0
-  hasEnemy: 0
-  movementHandler: {fileID: 57801339}
 --- !u!4 &57801344
 Transform:
   m_ObjectHideFlags: 0
@@ -1001,14 +1000,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   masterState: 0
   combatState: 0
+  hasEnemy: 0
   currentEnemy:
     enemy: {fileID: 0}
     enemyStates: {fileID: 0}
     enemyCombatSystem: {fileID: 0}
     enemyMasterState: 0
     enemyCombatState: 0
-  hasEnemy: 0
-  movementHandler: {fileID: 0}
 --- !u!1 &1562415691
 GameObject:
   m_ObjectHideFlags: 0

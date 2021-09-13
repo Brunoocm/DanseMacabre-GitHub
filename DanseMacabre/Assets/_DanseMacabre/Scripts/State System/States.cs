@@ -2,8 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class States 
+public class States : MonoBehaviour
 {
+    [Header("States")]
+    public MasterState masterState = MasterState.idle;
+    public CombatState combatState = CombatState.inactive;
+
     public enum MasterState
     {
         idle,
