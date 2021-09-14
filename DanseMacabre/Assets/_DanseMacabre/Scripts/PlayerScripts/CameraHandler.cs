@@ -9,14 +9,13 @@ public class CameraHandler : MonoBehaviour
     [SerializeField] private Transform combatCameraTarget;
     [SerializeField] private float rotationPower = 3f;
     [SerializeField] private bool isControlling = true;
-    [SerializeField] private CinemachineVirtualCamera camera;
+    [SerializeField] private CinemachineVirtualCamera aimCamera;
 
     private StatesSystem statesSystem;
 
     private void Awake()
     {
         statesSystem = GetComponent<StatesSystem>( );
-        camera.Follow = normalCameraTarget;
         isControlling = true;
     }
 
@@ -24,18 +23,15 @@ public class CameraHandler : MonoBehaviour
     {
         if ( isControlling )
             AimControl( );
-        else
-        {
-            if ( statesSystem.currentEnemy.enemy != null )
+        else if ( statesSystem.currentEnemy.enemy != null )
                 combatCameraTarget.LookAt( statesSystem.currentEnemy.enemy.transform );
-            normalCameraTarget.rotation = combatCameraTarget.rotation;
-        }
     }
 
+    //Alterna entre o estado de foco de combate e livre da camera
     public void SwitchTarget()
     {
-        camera.Follow = camera.Follow == normalCameraTarget ? combatCameraTarget : normalCameraTarget;
         isControlling = isControlling ? false : true;
+        aimCamera.enabled = isControlling ? true : false;
     }
 
     private void AimControl()

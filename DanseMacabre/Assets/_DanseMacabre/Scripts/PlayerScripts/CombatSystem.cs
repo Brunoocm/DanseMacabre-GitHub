@@ -11,27 +11,24 @@ public class CombatSystem : MonoBehaviour
     private void Update()
     {
         hasEnemy = currentEnemy.enemy != null ? true : false;
-
         currentEnemy.UpdateEnemy( currentEnemy.enemy );
     }
 
+    //Futuramente irá fazer as verificações necessárias para escolher o alvo de combate
     public void TryTarget()
     {
         if(currentEnemy != null)
-        {
             currentEnemy.UpdateEnemy( GameObject.FindGameObjectWithTag( "Enemy" ) );
-            GetComponent<MovementHandler>().RotateTowardTarget( currentEnemy.enemy, true );
-        }
 
         if ( hasEnemy )
             UnlockTarget( );
     }
 
+    //Desseleciona o inimigo focado 
     public void UnlockTarget()
     {
         currentEnemy.enemy = null;
         currentEnemy.UpdateEnemy( null );
-        GetComponent<MovementHandler>( ).RotateTowardTarget( null, false );
     }
 }
 
@@ -47,6 +44,7 @@ public class Enemy
 
     public void UpdateEnemy(GameObject _enemy)
     {
+        //Seta valores padrão se não tiver inimigo
         if ( _enemy == null )
         {
             enemyStates = null;

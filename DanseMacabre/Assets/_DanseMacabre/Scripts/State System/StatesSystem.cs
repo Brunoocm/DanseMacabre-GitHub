@@ -5,6 +5,6 @@ using UnityEngine;
 public class StatesSystem : States
 {
     [Header("Enemy Info")]
-    public bool hasEnemy;
+    public bool inCombat;
     public Enemy currentEnemy;
 }
