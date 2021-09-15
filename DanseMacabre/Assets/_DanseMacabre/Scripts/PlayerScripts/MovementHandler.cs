@@ -29,6 +29,7 @@ public class MovementHandler : MonoBehaviour
     {
         rotateTowardEnemy = false;
         rb = GetComponent<Rigidbody>( );
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void Update()
