@@ -6,34 +6,34 @@ public class SwordTutorial : MonoBehaviour
 {
 
     MainTutorial scriptTutorial;
-    GameObject atacarObj;
     void Start()
     {
         scriptTutorial = GameObject.Find("-----Tutorial-----").GetComponent<MainTutorial>();
-        atacarObj = GameObject.Find("PegarTutorial");
     }
 
     void Update()
     {
-      
     }
 
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            if (scriptTutorial.hasSword)
+            if (!scriptTutorial.hasSword)
             {
-                atacarObj.SetActive(true);
+                GameObject.Find("PegarTutorial").transform.GetChild(0).gameObject.SetActive(true);
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     scriptTutorial.hasSword = true;
-                    atacarObj.SetActive(false);
-                    print("aaa");
+                    GameObject.Find("PegarTutorial").transform.GetChild(0).gameObject.SetActive(false);
                 }
             }
           
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
     }
 }
