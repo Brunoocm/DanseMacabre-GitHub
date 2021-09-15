@@ -95,6 +95,11 @@ public class MovementHandler : MonoBehaviour
         else if( !_rotateTowardEnemy && enemy == null )
             enemyPosition = null;
     }
+    
+    public void IsMoving(bool value)
+    {
+        isWalking = value;
+    }
 
     #endregion
 }

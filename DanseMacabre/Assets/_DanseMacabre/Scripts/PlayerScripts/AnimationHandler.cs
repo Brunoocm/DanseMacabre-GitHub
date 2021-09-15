@@ -4,26 +4,57 @@ using UnityEngine;
 
 public class AnimationHandler : MonoBehaviour
 {
-    public Animator anim => GetComponentInChildren<Animator>();
+    public Animator anim => GetComponentInChildren<Animator>( );
+    public States.CombatState combatState;
+
+    private float horizontalInput;
+    private float verticalInput;
+    private bool inCombat;
 
     private void Update()
     {
-
+        SetCombatState( );
     }
 
-    public void SetMovementInput(float horizontalInput, float verticalInput)
+    public void SetMovementInput( float _horizontalInput , float _verticalInput )
     {
-        anim.SetFloat( "Movement X" , horizontalInput );
-        anim.SetFloat( "Movement Y" , verticalInput );
+        anim.SetFloat( "Movement X" , _horizontalInput );
+        anim.SetFloat( "Movement Y" , _verticalInput );
 
-        if ( horizontalInput != 0 || verticalInput != 0 )
+        if ( _horizontalInput != 0 || _verticalInput != 0 )
             anim.SetBool( "IsWalking" , true );
         else
             anim.SetBool( "IsWalking" , false );
     }
 
-    public void InCombat (bool value)
+    public void InCombat( bool value )
     {
         anim.SetBool( "InCombat" , value );
+        inCombat = value;
+    }
+
+    public void GetCombatState( StatesSystem.CombatState _combatState )
+    {
+        combatState = _combatState;
+    }
+    
+    private void SetCombatState()
+    {
+        if ( combatState == States.CombatState.attacking || combatState == States.CombatState.defending )
+        {
+            anim.SetLayerWeight( 1 , 1 );
+        }
+        else
+            anim.SetLayerWeight( 1 , 0 );
+
+        if ( combatState == States.CombatState.attacking )
+            anim.SetBool( "Attacking" , true );
+        else
+            anim.SetBool( "Attacking" , false );
+
+        if ( combatState == States.CombatState.defending )
+            anim.SetBool( "Blocking" , true );
+        else
+            anim.SetBool( "Blocking" , false );
     }
 }

@@ -8,33 +8,55 @@ public class PlayerStateSystem : StatesSystem
     private CombatSystem combatSystem => GetComponent<CombatSystem>( );
     private AnimationHandler animationHandler => GetComponent<AnimationHandler>( );
 
+    private bool isWalking;
+
     private void Update()
     {
         inCombat = combatSystem.hasEnemy;
 
+        UpdateStates( );
         UpdateCurrentInfo( );
         UpdateMovementHandler( );
         UpdateCombatSystem( );
         UpdateAnimationHandler( );
     }
-    public void UpdateCurrentInfo()
+
+    private void UpdateStates()
     {
-        currentEnemy = combatSystem.currentEnemy;
-        inCombat = combatSystem.hasEnemy;
+        if ( isWalking )
+            masterState = MasterState.walking;
+
+            combatState = combatSystem.combatState;
+
+        if ( combatState != States.CombatState.inactive )
+            masterState = States.MasterState.combat;
+        else if(!isWalking)
+            masterState = States.MasterState.idle;
     }
 
-    public void UpdateMovementHandler()
+    private void UpdateCurrentInfo()
+    {
+        //Combate
+        inCombat = combatSystem.inCombat;
+        currentEnemy = combatSystem.currentEnemy;
+
+        //Movement
+        isWalking = movementHandler.isWalking;
+    }
+
+    private void UpdateMovementHandler()
     {
         movementHandler.RotateTowardTarget( currentEnemy.enemy , inCombat );
     }
 
-    public void UpdateCombatSystem()
+    private void UpdateCombatSystem()
     {
 
     }
 
-    public void UpdateAnimationHandler()
+    private void UpdateAnimationHandler()
     {
         animationHandler.InCombat( inCombat );
+        animationHandler.GetCombatState( combatState );
     }
 }
