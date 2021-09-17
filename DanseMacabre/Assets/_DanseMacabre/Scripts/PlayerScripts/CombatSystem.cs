@@ -5,36 +5,34 @@ using UnityEngine;
 
 public class CombatSystem : MonoBehaviour
 {
-    [Header( "Combat Info" )]
+    [Header("Combat Info")]
     public bool inCombat;
     private bool attacking;
     private bool blocking;
     public States.CombatState combatState;
 
-    [Header( "Current Enemy Info" )]
+    [Header("Current Enemy Info")]
     public Enemy currentEnemy;
     public bool hasEnemy;
 
     private void Update()
     {
         hasEnemy = currentEnemy.enemy != null ? true : false;
-        currentEnemy.UpdateEnemy( currentEnemy.enemy );
-        CombatState( );
-
-
+        currentEnemy.UpdateEnemy(currentEnemy.enemy);
+        CombatState();
     }
 
     private void CombatState()
     {
 
-        if ( hasEnemy || attacking || blocking )
+        if (hasEnemy || attacking || blocking)
         {
             inCombat = true;
         }
         else
             inCombat = false;
 
-        if ( !inCombat && !attacking && !blocking )
+        if (!inCombat && !attacking && !blocking)
         {
             combatState = States.CombatState.inactive;
             return;
@@ -42,50 +40,50 @@ public class CombatSystem : MonoBehaviour
 
         combatState = States.CombatState.idle;
 
-        if ( attacking )
+        if (attacking)
         {
             combatState = States.CombatState.attacking;
         }
-        if ( blocking )
+        if (blocking)
         {
             combatState = States.CombatState.defending;
         }
     }
 
-    //Futuramente irá fazer as verificações necessárias para escolher o alvo de combate
+    //Futuramente irï¿½ fazer as verificaï¿½ï¿½es necessï¿½rias para escolher o alvo de combate
     public void TryTarget()
     {
-        if ( currentEnemy != null )
-            currentEnemy.UpdateEnemy( GameObject.FindGameObjectWithTag( "Enemy" ) );
+        if (currentEnemy != null)
+            currentEnemy.UpdateEnemy(GameObject.FindGameObjectWithTag("Enemy"));
 
-        if ( hasEnemy )
-            UnlockTarget( );
+        if (hasEnemy)
+            UnlockTarget();
     }
 
     //Desseleciona o inimigo focado 
     public void UnlockTarget()
     {
         currentEnemy.enemy = null;
-        currentEnemy.UpdateEnemy( null );
+        currentEnemy.UpdateEnemy(null);
     }
 
     public void TryAttack()
     {
-        if ( attacking )
+        if (attacking)
             return;
 
         attacking = true;
-        StartCoroutine( DoneAttack( ) );
+        StartCoroutine(DoneAttack());
 
     }
 
     IEnumerator DoneAttack()
     {
-        yield return new WaitForSeconds( 1f );
+        yield return new WaitForSeconds(1f);
         attacking = false;
     }
 
-    public void Block( bool value )
+    public void Block(bool value)
     {
         blocking = value;
     }
@@ -101,10 +99,10 @@ public class Enemy
     public States.MasterState enemyMasterState;
     public States.CombatState enemyCombatState;
 
-    public void UpdateEnemy( GameObject _enemy )
+    public void UpdateEnemy(GameObject _enemy)
     {
-        //Seta valores padrão se não tiver inimigo
-        if ( _enemy == null )
+        //Seta valores padrï¿½o se nï¿½o tiver inimigo
+        if (_enemy == null)
         {
             enemyStates = null;
             enemyCombatSystem = null;
@@ -114,8 +112,8 @@ public class Enemy
         }
 
         enemy = _enemy;
-        enemyStates = enemy.GetComponent<StatesSystem>( );
-        enemyCombatSystem = enemy.GetComponent<CombatSystem>( );
+        enemyStates = enemy.GetComponent<StatesSystem>();
+        enemyCombatSystem = enemy.GetComponent<CombatSystem>();
         enemyMasterState = enemyStates.masterState;
         enemyCombatState = enemyStates.combatState;
     }

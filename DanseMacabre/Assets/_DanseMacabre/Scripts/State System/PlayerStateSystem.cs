@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerStateSystem : StatesSystem
 {
-    public MovementHandler movementHandler => GetComponent<MovementHandler>( );
-    private CombatSystem combatSystem => GetComponent<CombatSystem>( );
-    private AnimationHandler animationHandler => GetComponent<AnimationHandler>( );
+    public MovementHandler movementHandler => GetComponent<MovementHandler>();
+    private CombatSystem combatSystem => GetComponent<CombatSystem>();
+    private AnimationHandler animationHandler => GetComponent<AnimationHandler>();
 
     private bool isWalking;
 
@@ -14,23 +14,22 @@ public class PlayerStateSystem : StatesSystem
     {
         inCombat = combatSystem.hasEnemy;
 
-        UpdateStates( );
-        UpdateCurrentInfo( );
-        UpdateMovementHandler( );
-        UpdateCombatSystem( );
-        UpdateAnimationHandler( );
+        UpdateStates();
+        UpdateCurrentInfo();
+        UpdateMovementHandler();
+        UpdateCombatSystem();
+        UpdateAnimationHandler();
     }
 
     private void UpdateStates()
     {
-        if ( isWalking )
-            masterState = MasterState.walking;
+        if (isWalking) masterState = MasterState.walking;
 
-            combatState = combatSystem.combatState;
+        combatState = combatSystem.combatState;
 
-        if ( combatState != States.CombatState.inactive )
+        if (combatState != States.CombatState.inactive)
             masterState = States.MasterState.combat;
-        else if(!isWalking)
+        else if (!isWalking)
             masterState = States.MasterState.idle;
     }
 
@@ -46,7 +45,7 @@ public class PlayerStateSystem : StatesSystem
 
     private void UpdateMovementHandler()
     {
-        movementHandler.RotateTowardTarget( currentEnemy.enemy , inCombat );
+        movementHandler.RotateTowardTarget(currentEnemy.enemy, inCombat);
     }
 
     private void UpdateCombatSystem()
@@ -56,7 +55,7 @@ public class PlayerStateSystem : StatesSystem
 
     private void UpdateAnimationHandler()
     {
-        animationHandler.InCombat( inCombat );
-        animationHandler.GetCombatState( combatState );
+        animationHandler.InCombat(inCombat);
+        animationHandler.GetCombatState(combatState);
     }
 }
