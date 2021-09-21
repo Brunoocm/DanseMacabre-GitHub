@@ -22,15 +22,16 @@ public class InputSystem : MonoBehaviour
 
         MousePosition = Input.mousePosition;
 
+        movementHandler.TryMove(horizontalInput, verticalInput);
+        animationHandler.GetMovementInput(horizontalInput, verticalInput);
+
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.S))
         {
-            movementHandler.TryMove(new Vector3(InputVector.x, 0, InputVector.y));
             movementHandler.IsMoving(true);
-            animationHandler.SetMovementInput(horizontalInput, verticalInput);
         }
         else
         {
-            animationHandler.SetMovementInput(0f, 0f);
+            animationHandler.GetMovementInput(0f, 0f);
             movementHandler.IsMoving(false);
         }
 

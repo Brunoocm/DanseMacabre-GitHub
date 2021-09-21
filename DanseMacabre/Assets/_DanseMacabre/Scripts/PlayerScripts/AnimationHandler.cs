@@ -6,11 +6,16 @@ public class AnimationHandler : MonoBehaviour
 {
     public Animator anim => GetComponentInChildren<Animator>();
     public States.CombatState combatState;
+    public float aceleracao;
+    public float desaceleracao;
+    public float zerarEm;
+
+    [Range(-1, 1)] public float horizontalInput;
+    [Range(-1, 1)] public float verticalInput;
 
     [HideInInspector] public bool canMove;
 
-    private float horizontalInput;
-    private float verticalInput;
+
     private bool inCombat;
 
     private void Update()
@@ -18,7 +23,24 @@ public class AnimationHandler : MonoBehaviour
         SetCombatState();
     }
 
-    public void SetMovementInput(float _horizontalInput, float _verticalInput)
+    public void GetMovementInput(float _horizontalInput, float _verticalInput)
+    {
+        if (_horizontalInput > 0 && horizontalInput <= 1) horizontalInput += aceleracao * Time.deltaTime;
+        else if (_horizontalInput < 0 && horizontalInput >= -1) horizontalInput -= aceleracao * Time.deltaTime;
+        else if (_horizontalInput == 0 && horizontalInput > 0 && horizontalInput > zerarEm) horizontalInput -= desaceleracao * Time.deltaTime;
+        else if (_horizontalInput == 0 && horizontalInput < 0 && horizontalInput < zerarEm) horizontalInput += desaceleracao * Time.deltaTime;
+        else if (_horizontalInput == 0 && (horizontalInput < zerarEm || horizontalInput > zerarEm)) horizontalInput = 0;
+
+        if (_verticalInput > 0 && verticalInput <= 1) verticalInput += aceleracao * Time.deltaTime;
+        else if (_verticalInput < 0 && verticalInput >= -1) verticalInput -= aceleracao * Time.deltaTime;
+        else if (_verticalInput == 0 && verticalInput > 0 && verticalInput > zerarEm) verticalInput -= desaceleracao * Time.deltaTime;
+        else if (_verticalInput == 0 && verticalInput < 0 && verticalInput < zerarEm) verticalInput += desaceleracao * Time.deltaTime;
+        else if (_verticalInput == 0 && (verticalInput < zerarEm || verticalInput > zerarEm)) verticalInput = 0;
+
+        SetMovementInput(horizontalInput, verticalInput);
+    }
+
+    private void SetMovementInput(float _horizontalInput, float _verticalInput)
     {
         if (combatState == States.CombatState.attacking)
         {

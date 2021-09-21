@@ -177,10 +177,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canMove: 1
-  currentSpeed: 0
   movementSpeed: 1.5
-  accelerationSpeed: 0.5
+  accelerationSpeed: 1.75
+  desaccelerationSpeed: 3.5
   rotationSpeed: 3
+  zerarEm: 0.25
+  currentSpeed: {x: 0, y: 0, z: 0}
+  horizontalSpeed: 0
+  verticalInput: 0
   rotateTowardEnemy: 0
   enemyPosition: {fileID: 0}
   normalFollowTransform: {fileID: 1589674837}
@@ -289,6 +293,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   combatState: 0
+  aceleracao: 1.75
+  desaceleracao: 3
+  zerarEm: 0.05
+  horizontalInput: 0
+  verticalInput: 0
   canMove: 0
 --- !u!54 &57801346
 Rigidbody:

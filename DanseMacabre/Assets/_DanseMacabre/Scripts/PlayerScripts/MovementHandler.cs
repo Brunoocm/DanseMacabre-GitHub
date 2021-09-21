@@ -8,9 +8,16 @@ public class MovementHandler : MonoBehaviour
 {
     [Header("Movement Controls")]
     public bool canMove = true;
-    [SerializeField] private float currentSpeed;
     [SerializeField] private float movementSpeed;
+    [SerializeField] private float accelerationSpeed;
+    [SerializeField] private float desaccelerationSpeed;
     [SerializeField] private float rotationSpeed;
+    [SerializeField] private float zerarEm;
+
+    [Header("Valores Atuais")]
+    [SerializeField] private Vector3 currentSpeed;
+    [SerializeField, Range(-1, 1)] private float horizontalSpeed;
+    [SerializeField, Range(-1, 1)] private float verticalInput;
 
     [Header("Enemy Control")]
     [SerializeField] private bool rotateTowardEnemy;
@@ -38,7 +45,7 @@ public class MovementHandler : MonoBehaviour
     }
 
     #region Movimentação
-    public void TryMove(Vector3 targetVector)
+    public void TryMove(float _horizontalInput, float _verticalInput)
     {
         if (!canMove)
         {
@@ -46,7 +53,19 @@ public class MovementHandler : MonoBehaviour
             return;
         }
 
-        var movementVector = MoveTowardTarget(targetVector.normalized);
+        if (_horizontalInput > 0 && horizontalSpeed <= movementSpeed) horizontalSpeed += accelerationSpeed * Time.deltaTime;
+        else if (_horizontalInput < 0 && horizontalSpeed >= -movementSpeed) horizontalSpeed -= accelerationSpeed * Time.deltaTime;
+        else if (_horizontalInput == 0 && horizontalSpeed > 0 && horizontalSpeed > zerarEm) horizontalSpeed -= desaccelerationSpeed * Time.deltaTime;
+        else if (_horizontalInput == 0 && horizontalSpeed < 0 && horizontalSpeed < zerarEm) horizontalSpeed += desaccelerationSpeed * Time.deltaTime;
+        else if (_horizontalInput == 0 && (horizontalSpeed < zerarEm || horizontalSpeed > zerarEm)) horizontalSpeed = 0;
+
+        if (_verticalInput > 0 && verticalInput <= movementSpeed) verticalInput += accelerationSpeed * Time.deltaTime;
+        else if (_verticalInput < 0 && verticalInput >= -movementSpeed) verticalInput -= accelerationSpeed * Time.deltaTime;
+        else if (_verticalInput == 0 && verticalInput > 0 && verticalInput > zerarEm) verticalInput -= desaccelerationSpeed * Time.deltaTime;
+        else if (_verticalInput == 0 && verticalInput < 0 && verticalInput < zerarEm) verticalInput += desaccelerationSpeed * Time.deltaTime;
+        else if (_verticalInput == 0 && (verticalInput < zerarEm || verticalInput > zerarEm)) verticalInput = 0;
+
+        var movementVector = MoveTowardTarget(new Vector3(horizontalSpeed, 0, verticalInput));
         lastVelocity = movementVector;
     }
 
@@ -54,13 +73,13 @@ public class MovementHandler : MonoBehaviour
     //Retorna um vetor para que a função de rotação saiba a direção atual
     private Vector3 MoveTowardTarget(Vector3 targetVector)
     {
-        currentSpeed = movementSpeed * Time.deltaTime;
+        currentSpeed = targetVector;
         if (!rotateTowardEnemy)
             targetVector = Quaternion.Euler(0, normalFollowTransform.rotation.eulerAngles.y, 0) * targetVector;
         else
             targetVector = Quaternion.Euler(0, combatFollowTransform.rotation.eulerAngles.y, 0) * targetVector;
 
-        var targetPosition = transform.position + targetVector * currentSpeed;
+        var targetPosition = transform.position + targetVector * Time.deltaTime;
         transform.position = targetPosition;
         return targetVector;
     }
