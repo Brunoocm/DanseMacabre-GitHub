@@ -10,7 +10,6 @@ public class MovementHandler : MonoBehaviour
     public bool canMove = true;
     [SerializeField] private float currentSpeed;
     [SerializeField] private float movementSpeed;
-    [SerializeField] private float accelerationSpeed = 0.5f;
     [SerializeField] private float rotationSpeed;
 
     [Header("Enemy Control")]
@@ -36,12 +35,6 @@ public class MovementHandler : MonoBehaviour
     private void Update()
     {
         CalculateRotation();
-
-        currentSpeed = 0;
-        if (currentSpeed < movementSpeed)
-        {
-            currentSpeed += accelerationSpeed * Time.deltaTime;
-        }
     }
 
     #region Movimentação
@@ -61,6 +54,7 @@ public class MovementHandler : MonoBehaviour
     //Retorna um vetor para que a função de rotação saiba a direção atual
     private Vector3 MoveTowardTarget(Vector3 targetVector)
     {
+        currentSpeed = movementSpeed * Time.deltaTime;
         if (!rotateTowardEnemy)
             targetVector = Quaternion.Euler(0, normalFollowTransform.rotation.eulerAngles.y, 0) * targetVector;
         else

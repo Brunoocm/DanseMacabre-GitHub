@@ -7028,8 +7028,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canMove: 1
-  MovementSpeed: 1.5
-  RotationSpeed: 5
+  currentSpeed: 0
+  movementSpeed: 1.5
+  rotationSpeed: 3
   rotateTowardEnemy: 0
   enemyPosition: {fileID: 0}
   normalFollowTransform: {fileID: 1819537776}
