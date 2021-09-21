@@ -45,16 +45,20 @@ public class AnimationHandler : MonoBehaviour
         if (combatState == States.CombatState.attacking)
         {
             anim.SetBool("IsWalking", false);
-            anim.SetLayerWeight(0, 0);
+            anim.SetFloat("Movement X", 0f);
+            anim.SetFloat("Movement Y", 0f);
+            return;
         }
-
-        anim.SetFloat("Movement X", _horizontalInput);
-        anim.SetFloat("Movement Y", _verticalInput);
-
-        if (_horizontalInput != 0 || _verticalInput != 0)
-            anim.SetBool("IsWalking", true);
         else
-            anim.SetBool("IsWalking", false);
+        {
+            anim.SetFloat("Movement X", _horizontalInput);
+            anim.SetFloat("Movement Y", _verticalInput);
+
+            if (_horizontalInput != 0 || _verticalInput != 0)
+                anim.SetBool("IsWalking", true);
+            else
+                anim.SetBool("IsWalking", false);
+        }
     }
 
     public void InCombat(bool value)
@@ -68,14 +72,25 @@ public class AnimationHandler : MonoBehaviour
         combatState = _combatState;
     }
 
+    public void GetAttackType(int type)
+    {
+        anim.SetInteger("AttackType", type);
+    }
+
     private void SetCombatState()
     {
-        if (combatState == States.CombatState.attacking || combatState == States.CombatState.defending)
+        if (combatState == States.CombatState.attacking)
         {
             anim.SetLayerWeight(1, 1);
         }
         else
             anim.SetLayerWeight(1, 0);
+
+        if (combatState == States.CombatState.defending)
+        {
+            anim.SetLayerWeight(2, 1);
+        }
+        else anim.SetLayerWeight(2, 0);
 
         if (combatState == States.CombatState.attacking)
             anim.SetBool("Attacking", true);

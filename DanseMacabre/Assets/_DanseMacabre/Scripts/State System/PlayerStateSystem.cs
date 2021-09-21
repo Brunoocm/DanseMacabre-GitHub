@@ -9,6 +9,7 @@ public class PlayerStateSystem : StatesSystem
     private AnimationHandler animationHandler => GetComponent<AnimationHandler>();
 
     [HideInInspector] public bool canMove;
+    [HideInInspector] public int attackType;
     private bool isWalking;
 
     private void Update()
@@ -39,6 +40,7 @@ public class PlayerStateSystem : StatesSystem
         inCombat = combatSystem.inCombat;
         currentEnemy = combatSystem.currentEnemy;
         canMove = !combatSystem.attacking;
+        attackType = combatSystem.attackType;
 
         //Movement
         isWalking = movementHandler.isWalking;
@@ -46,6 +48,7 @@ public class PlayerStateSystem : StatesSystem
 
     private void UpdateMovementHandler()
     {
+        movementHandler.enabled = combatState == States.CombatState.attacking ? false : true;
         movementHandler.RotateTowardTarget(currentEnemy.enemy, inCombat);
         movementHandler.canMove = canMove;
     }
@@ -54,5 +57,6 @@ public class PlayerStateSystem : StatesSystem
     {
         animationHandler.InCombat(inCombat);
         animationHandler.GetCombatState(combatState);
+        animationHandler.GetAttackType(attackType);
     }
 }

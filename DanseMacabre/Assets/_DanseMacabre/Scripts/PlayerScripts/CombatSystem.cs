@@ -8,12 +8,18 @@ public class CombatSystem : MonoBehaviour
     [Header("Combat Info")]
     public bool inCombat;
     public bool attacking;
-    private bool blocking;
+    public int attackType;
+    public int totalAttacks;
     public States.CombatState combatState;
 
     [Header("Current Enemy Info")]
     public Enemy currentEnemy;
     public bool hasEnemy;
+
+    private bool blocking;
+    private float currentAtackDuration;
+    private float timer;
+
 
     private void Update()
     {
@@ -35,6 +41,7 @@ public class CombatSystem : MonoBehaviour
         if (!inCombat && !attacking && !blocking)
         {
             combatState = States.CombatState.inactive;
+            attackType = 0;
             return;
         }
 
@@ -70,16 +77,14 @@ public class CombatSystem : MonoBehaviour
     public void TryAttack()
     {
         if (attacking)
-            return;
-
-        attacking = true;
-        StartCoroutine(DoneAttack());
-    }
-
-    IEnumerator DoneAttack()
-    {
-        yield return new WaitForSeconds(1.5f);
-        attacking = false;
+        {
+            if ((attackType + 1) <= totalAttacks) attackType++;
+        }
+        else
+        {
+            attackType++;
+            attacking = true;
+        }
     }
 
     public void Block(bool value)
