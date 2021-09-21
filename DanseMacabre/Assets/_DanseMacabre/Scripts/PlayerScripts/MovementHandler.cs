@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent( typeof( InputSystem ) )]
+[RequireComponent(typeof(InputSystem))]
 public class MovementHandler : MonoBehaviour
 {
-    [Header( "Movement Controls" )]
+    [Header("Movement Controls")]
     public bool canMove = true;
     [SerializeField] private float MovementSpeed;
     [SerializeField] private float RotationSpeed;
@@ -15,7 +15,7 @@ public class MovementHandler : MonoBehaviour
     [SerializeField] private bool rotateTowardEnemy;
     public Transform enemyPosition;
 
-    [Header( "Objects" )]
+    [Header("Objects")]
     [SerializeField] private Transform normalFollowTransform;
     [SerializeField] private Transform combatFollowTransform;
     [SerializeField] private Transform visualsTransform;
@@ -28,37 +28,37 @@ public class MovementHandler : MonoBehaviour
     private void Awake()
     {
         rotateTowardEnemy = false;
-        rb = GetComponent<Rigidbody>( );
+        rb = GetComponent<Rigidbody>();
     }
 
     private void Update()
     {
-        CalculateRotation( );
+        CalculateRotation();
     }
 
     #region Movimentação
-    public void TryMove( Vector3 targetVector )
+    public void TryMove(Vector3 targetVector)
     {
-        if ( !canMove )
+        if (!canMove)
         {
             isWalking = false;
             return;
         }
 
-        var movementVector = MoveTowardTarget( targetVector.normalized );
+        var movementVector = MoveTowardTarget(targetVector.normalized);
         lastVelocity = movementVector;
     }
 
     //Calcula a direção da movimentação baseada no input e direção da câmera
     //Retorna um vetor para que a função de rotação saiba a direção atual
-    private Vector3 MoveTowardTarget( Vector3 targetVector )
+    private Vector3 MoveTowardTarget(Vector3 targetVector)
     {
         var speed = MovementSpeed * Time.deltaTime;
 
-        if ( !rotateTowardEnemy )
-            targetVector = Quaternion.Euler( 0 , normalFollowTransform.rotation.eulerAngles.y , 0 ) * targetVector;
+        if (!rotateTowardEnemy)
+            targetVector = Quaternion.Euler(0, normalFollowTransform.rotation.eulerAngles.y, 0) * targetVector;
         else
-            targetVector = Quaternion.Euler( 0 , combatFollowTransform.rotation.eulerAngles.y , 0 ) * targetVector;
+            targetVector = Quaternion.Euler(0, combatFollowTransform.rotation.eulerAngles.y, 0) * targetVector;
 
         var targetPosition = transform.position + targetVector * speed;
         transform.position = targetPosition;
@@ -69,33 +69,35 @@ public class MovementHandler : MonoBehaviour
     #region Rotação do Personagem
     private void CalculateRotation()
     {
-        if ( rotateTowardEnemy )
-            visualsTransform.LookAt( enemyPosition );
+        if (rotateTowardEnemy)
+            visualsTransform.LookAt(enemyPosition);
 
-        RotateTowardMovementVector( lastVelocity );
+        RotateTowardMovementVector(lastVelocity);
     }
 
-    private void RotateTowardMovementVector( Vector3 movementDirection )
+    private void RotateTowardMovementVector(Vector3 movementDirection)
     {
-        if ( movementDirection.magnitude == 0 )
+        if (movementDirection.magnitude == 0)
         { return; }
 
-        var rotation = Quaternion.LookRotation( movementDirection );
-        visualsTransform.rotation = Quaternion.RotateTowards( visualsTransform.transform.rotation , rotation , RotationSpeed );
+        var rotation = Quaternion.LookRotation(movementDirection);
+        visualsTransform.rotation = Quaternion.RotateTowards(visualsTransform.transform.rotation, rotation, RotationSpeed);
     }
     #endregion
 
     #region Funções Públicas
     public void RotateTowardTarget(GameObject enemy, bool _rotateTowardEnemy)
     {
+        if (enemy == null && _rotateTowardEnemy) return;
+
         rotateTowardEnemy = _rotateTowardEnemy;
 
-        if ( rotateTowardEnemy && enemy != null )
+        if (rotateTowardEnemy && enemy != null)
             enemyPosition = enemy.transform;
-        else if( !_rotateTowardEnemy && enemy == null )
+        else if (!_rotateTowardEnemy && enemy == null)
             enemyPosition = null;
     }
-    
+
     public void IsMoving(bool value)
     {
         isWalking = value;

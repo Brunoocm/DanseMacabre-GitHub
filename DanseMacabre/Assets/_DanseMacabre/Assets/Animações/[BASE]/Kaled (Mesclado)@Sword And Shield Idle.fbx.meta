@@ -1,24 +1,12 @@
 fileFormatVersion: 2
-guid: e19ec2c60bed7a94ab4f0de4b9bfe39d
+guid: d1d824d35d54d1a4cac11f104546e138
 ModelImporter:
   serializedVersion: 20200
-  internalIDToNameTable: []
-  externalObjects:
+  internalIDToNameTable:
   - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: "cal\xE7a 2"
-    second: {fileID: 2800000, guid: 5a424af2faf02d9439374b61ba9f1128, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: istockphoto-1145602814-612x612
-    second: {fileID: 2800000, guid: f854d214a9f398a4fa4d5cdbff08f13b, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: textura
-    second: {fileID: 2800000, guid: e452a67f66e1292449de58e0c69513fc, type: 3}
+      74: -203655887218126122
+    second: mixamo.com
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -49,7 +37,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 7.5
+    globalScale: 0.1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -100,7 +88,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.074999996
+    globalScale: 0.001
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

@@ -7,7 +7,7 @@ public class CombatSystem : MonoBehaviour
 {
     [Header("Combat Info")]
     public bool inCombat;
-    private bool attacking;
+    public bool attacking;
     private bool blocking;
     public States.CombatState combatState;
 
@@ -74,12 +74,11 @@ public class CombatSystem : MonoBehaviour
 
         attacking = true;
         StartCoroutine(DoneAttack());
-
     }
 
     IEnumerator DoneAttack()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.5f);
         attacking = false;
     }
 

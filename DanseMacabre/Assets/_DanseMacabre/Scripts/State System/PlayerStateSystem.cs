@@ -8,6 +8,7 @@ public class PlayerStateSystem : StatesSystem
     private CombatSystem combatSystem => GetComponent<CombatSystem>();
     private AnimationHandler animationHandler => GetComponent<AnimationHandler>();
 
+    [HideInInspector] public bool canMove;
     private bool isWalking;
 
     private void Update()
@@ -17,7 +18,6 @@ public class PlayerStateSystem : StatesSystem
         UpdateStates();
         UpdateCurrentInfo();
         UpdateMovementHandler();
-        UpdateCombatSystem();
         UpdateAnimationHandler();
     }
 
@@ -38,6 +38,7 @@ public class PlayerStateSystem : StatesSystem
         //Combate
         inCombat = combatSystem.inCombat;
         currentEnemy = combatSystem.currentEnemy;
+        canMove = !combatSystem.attacking;
 
         //Movement
         isWalking = movementHandler.isWalking;
@@ -46,11 +47,7 @@ public class PlayerStateSystem : StatesSystem
     private void UpdateMovementHandler()
     {
         movementHandler.RotateTowardTarget(currentEnemy.enemy, inCombat);
-    }
-
-    private void UpdateCombatSystem()
-    {
-
+        movementHandler.canMove = canMove;
     }
 
     private void UpdateAnimationHandler()
