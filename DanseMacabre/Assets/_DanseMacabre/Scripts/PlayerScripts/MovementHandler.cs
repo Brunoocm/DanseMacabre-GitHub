@@ -8,8 +8,10 @@ public class MovementHandler : MonoBehaviour
 {
     [Header("Movement Controls")]
     public bool canMove = true;
-    [SerializeField] private float MovementSpeed;
-    [SerializeField] private float RotationSpeed;
+    [SerializeField] private float currentSpeed;
+    [SerializeField] private float movementSpeed;
+    [SerializeField] private float accelerationSpeed = 0.5f;
+    [SerializeField] private float rotationSpeed;
 
     [Header("Enemy Control")]
     [SerializeField] private bool rotateTowardEnemy;
@@ -34,6 +36,12 @@ public class MovementHandler : MonoBehaviour
     private void Update()
     {
         CalculateRotation();
+
+        currentSpeed = 0;
+        if (currentSpeed < movementSpeed)
+        {
+            currentSpeed += accelerationSpeed * Time.deltaTime;
+        }
     }
 
     #region Movimentação
@@ -53,14 +61,12 @@ public class MovementHandler : MonoBehaviour
     //Retorna um vetor para que a função de rotação saiba a direção atual
     private Vector3 MoveTowardTarget(Vector3 targetVector)
     {
-        var speed = MovementSpeed * Time.deltaTime;
-
         if (!rotateTowardEnemy)
             targetVector = Quaternion.Euler(0, normalFollowTransform.rotation.eulerAngles.y, 0) * targetVector;
         else
             targetVector = Quaternion.Euler(0, combatFollowTransform.rotation.eulerAngles.y, 0) * targetVector;
 
-        var targetPosition = transform.position + targetVector * speed;
+        var targetPosition = transform.position + targetVector * currentSpeed;
         transform.position = targetPosition;
         return targetVector;
     }
@@ -81,7 +87,7 @@ public class MovementHandler : MonoBehaviour
         { return; }
 
         var rotation = Quaternion.LookRotation(movementDirection);
-        visualsTransform.rotation = Quaternion.RotateTowards(visualsTransform.transform.rotation, rotation, RotationSpeed);
+        visualsTransform.rotation = Quaternion.RotateTowards(visualsTransform.transform.rotation, rotation, rotationSpeed);
     }
     #endregion
 
