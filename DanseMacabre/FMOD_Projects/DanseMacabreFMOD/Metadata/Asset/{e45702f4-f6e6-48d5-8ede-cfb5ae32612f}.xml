@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="EncodableAsset" id="{e45702f4-f6e6-48d5-8ede-cfb5ae32612f}">
+		<property name="assetPath">
+			<value>Sons/Desvio/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{2c5fa16c-9194-4d00-8119-21152d5d40e2}</destination>
+		</relationship>
+	</object>
+</objects>

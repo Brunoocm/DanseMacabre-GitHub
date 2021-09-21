@@ -38,10 +38,10 @@ MonoBehaviour:
   Path: FMOD_Projects/DanseMacabreFMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637660240267423828
+  lastModified: 637678404561119719
   FileSizes:
   - Name: Desktop
-    Value: 28064
+    Value: 2380960
   Exists: 1
 --- !u!114 &-3606357991165475021
 MonoBehaviour:
@@ -58,10 +58,10 @@ MonoBehaviour:
   Path: FMOD_Projects/DanseMacabreFMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637660240267593883
+  lastModified: 637678404561149703
   FileSizes:
   - Name: Desktop
-    Value: 754
+    Value: 968
   Exists: 1
 --- !u!114 &-805524078633501403
 MonoBehaviour:
@@ -100,13 +100,86 @@ MonoBehaviour:
   - {fileID: -5598060165990462611}
   EditorEvents:
   - {fileID: -7935244960084461613}
+  - {fileID: 5114065255112616524}
+  - {fileID: 4688251545389864785}
+  - {fileID: 7614322244458226386}
+  - {fileID: 6460278317219287402}
   EditorParameters: []
   MasterBanks:
   - {fileID: -5598060165990462611}
   StringsBanks:
   - {fileID: -3606357991165475021}
-  stringsBankWriteTime: 637660240267593883
+  stringsBankWriteTime: 637678404561149703
   cacheVersion: 8
+--- !u!114 &4688251545389864785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Bb chorando 3
+  m_EditorClassIdentifier: 
+  Path: event:/Bb chorando 3
+  guid: 27e0de23172eff429a46263cf3ce6ed7
+  Banks:
+  - {fileID: -5598060165990462611}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 53175
+--- !u!114 &5114065255112616524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/BebeChorando
+  m_EditorClassIdentifier: 
+  Path: event:/BebeChorando
+  guid: f440490eaf9f3143a242056c5256b1be
+  Banks:
+  - {fileID: -5598060165990462611}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 10
+  Length: 14051
+--- !u!114 &6460278317219287402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/vento 1 morte
+  m_EditorClassIdentifier: 
+  Path: event:/vento 1 morte
+  guid: f157edb9256bec47baf7c61e78cd8d41
+  Banks:
+  - {fileID: -5598060165990462611}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 20000
 --- !u!114 &6733820226921489100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,6 +200,29 @@ MonoBehaviour:
   - Name: Desktop
     Value: 754
   Exists: 1
+--- !u!114 &7614322244458226386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/ambienta\xE7\xE3o limbo + gritos"
+  m_EditorClassIdentifier: 
+  Path: "event:/ambienta\xE7\xE3o limbo + gritos"
+  guid: 48a3d59952bd0c4e9cbfa718dd072bfb
+  Banks:
+  - {fileID: -5598060165990462611}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 34615
 --- !u!114 &8251917717648814303
 MonoBehaviour:
   m_ObjectHideFlags: 0

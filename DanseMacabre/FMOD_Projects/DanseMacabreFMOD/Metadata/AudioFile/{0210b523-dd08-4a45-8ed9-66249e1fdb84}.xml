@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{0210b523-dd08-4a45-8ed9-66249e1fdb84}">
+		<property name="assetPath">
+			<value>Sons/Desvio/rolamento.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.83054166666666662</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{2c5fa16c-9194-4d00-8119-21152d5d40e2}</destination>
+		</relationship>
+	</object>
+</objects>

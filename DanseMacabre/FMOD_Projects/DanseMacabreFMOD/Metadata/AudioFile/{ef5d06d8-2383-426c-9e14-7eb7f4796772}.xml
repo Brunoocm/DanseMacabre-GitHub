@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{ef5d06d8-2383-426c-9e14-7eb7f4796772}">
+		<property name="assetPath">
+			<value>Sons/Morte/Passos/Passos morte.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>18.170020833333332</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{2c5fa16c-9194-4d00-8119-21152d5d40e2}</destination>
+		</relationship>
+	</object>
+</objects>

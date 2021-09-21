@@ -6,7 +6,7 @@ using UnityEngine;
 public class MenuPause : MonoBehaviour
 {
     public GameObject pauseObj;
-    private bool paused;
+    public bool paused;
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
