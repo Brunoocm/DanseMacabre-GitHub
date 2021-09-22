@@ -13,10 +13,14 @@ public class AnimationEvents : MonoBehaviour
             if (combatSystem.attackType == 2) return;
             else if (combatSystem.attackType == 1) combatSystem.attacking = false;
         }
-        else if (type == 2)
+        else
         {
             combatSystem.attacking = false;
         }
-        else combatSystem.attacking = false;
+    }
+
+    public void TryDamage()
+    {
+        GetComponentInParent<CollisionDetection>().TryDamage();
     }
 }

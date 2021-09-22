@@ -140,6 +140,7 @@ GameObject:
   - component: {fileID: 57801339}
   - component: {fileID: 57801338}
   - component: {fileID: 57801345}
+  - component: {fileID: 57801348}
   - component: {fileID: 57801347}
   m_Layer: 6
   m_Name: Player
@@ -185,7 +186,7 @@ MonoBehaviour:
   zerarEm: 0.25
   currentSpeed: {x: 0, y: 0, z: 0}
   horizontalSpeed: 0
-  verticalInput: 0
+  verticalSpeed: 0
   rotateTowardEnemy: 0
   enemyPosition: {fileID: 0}
   normalFollowTransform: {fileID: 1589674837}
@@ -332,6 +333,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.67
   m_Center: {x: 0, y: 0.31, z: 0.87}
+--- !u!114 &57801348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 57801337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 410a6780d6428644f81a149355b058d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &288160446
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1362,30 +1375,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1527632037
-MonoBehaviour:
+--- !u!95 &1527632037
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1527632032}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb119f3a6ced80e4aa6d976888faf797, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inCombat: 0
-  attacking: 0
-  attackType: 0
-  totalAttacks: 0
-  combatState: 0
-  currentEnemy:
-    enemy: {fileID: 0}
-    enemyStates: {fileID: 0}
-    enemyCombatSystem: {fileID: 0}
-    enemyMasterState: 0
-    enemyCombatState: 0
-  hasEnemy: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ed43deb1a0d10ea4a9b17077fcc93ca5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &1527632038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1395,18 +1403,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1527632032}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4df9aa06ea93be344963739933ce7dd8, type: 3}
+  m_Script: {fileID: 11500000, guid: 2271dbe0864a4ba4aa55301a0ae8c17c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  masterState: 0
-  combatState: 0
-  inCombat: 0
-  currentEnemy:
-    enemy: {fileID: 0}
-    enemyStates: {fileID: 0}
-    enemyCombatSystem: {fileID: 0}
-    enemyMasterState: 0
-    enemyCombatState: 0
 --- !u!1 &1589674836
 GameObject:
   m_ObjectHideFlags: 0

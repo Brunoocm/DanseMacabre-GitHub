@@ -17,9 +17,6 @@ public class CombatSystem : MonoBehaviour
     public bool hasEnemy;
 
     private bool blocking;
-    private float currentAtackDuration;
-    private float timer;
-
 
     private void Update()
     {
