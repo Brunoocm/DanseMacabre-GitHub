@@ -35,7 +35,7 @@ public class CombatSystem : MonoBehaviour
         else
             inCombat = false;
 
-        if (!inCombat && !attacking && !blocking)
+        if (!attacking && !blocking) //tirei !inCombat && 
         {
             combatState = States.CombatState.inactive;
             attackType = 0;
@@ -48,7 +48,7 @@ public class CombatSystem : MonoBehaviour
         {
             combatState = States.CombatState.attacking;
         }
-        if (blocking)
+        else if (blocking)
         {
             combatState = States.CombatState.defending;
         }
@@ -73,17 +73,26 @@ public class CombatSystem : MonoBehaviour
 
     public void TryAttack()
     {
-        if (attacking)
+        if (!blocking) //coloquei if(!blocking) pra nao ativar no meio da espadada
         {
-            if ((attackType + 1) <= totalAttacks) attackType++;
+            if (attacking)
+            {
+                if ((attackType + 1) <= totalAttacks) attackType++;
+            }
+            else
+            {
+                attackType++;
+                attacking = true;
+            }
+
+            if (attackType > totalAttacks) attackType = totalAttacks;
         }
         else
         {
-            attackType++;
-            attacking = true;
+            //zera os valores se não trava o personagem no estado atacando
+            attackType = 0;
+            attacking = false;
         }
-
-        if (attackType > totalAttacks) attackType = totalAttacks;
     }
 
     public void Block(bool value)

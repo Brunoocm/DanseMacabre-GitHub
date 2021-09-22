@@ -91,8 +91,13 @@ public class MovementHandler : MonoBehaviour
     #region Rotação do Personagem
     private void CalculateRotation()
     {
-        if (rotateTowardEnemy)
-            visualsTransform.LookAt(enemyPosition);
+        if (rotateTowardEnemy) //Travei o jogador pra nao olhar para cima
+        {
+            Vector3 enemyXpos = enemyPosition.position;
+            enemyXpos.y = transform.position.y;
+            visualsTransform.LookAt(enemyXpos); //Antes visualsTransform.LookAt(enemyPosition);
+        }
+
 
         RotateTowardMovementVector(lastVelocity);
     }

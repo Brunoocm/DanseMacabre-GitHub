@@ -15,16 +15,23 @@ public class CollisionDetection : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             enemy = other;
+
+            print("hit");  
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        enemy = null;
+        if (other.CompareTag("Enemy")) //precisava colocar a tag
+        {
+            enemy = null;
+        }
+       
     }
 
     public void TryDamage()
     {
+        //coloquei o collider na espada pra rotacionar junto com o jogador e ficar mais preciso
         if (statesSystem.combatState == States.CombatState.attacking && enemy != null)
         {
             enemy.GetComponent<InimigoPrototipo>().PlayAnimation(statesSystem.attackType);
