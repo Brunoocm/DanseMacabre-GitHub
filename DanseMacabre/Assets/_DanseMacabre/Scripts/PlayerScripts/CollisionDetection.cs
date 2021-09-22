@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class CollisionDetection : MonoBehaviour
 {
+    public int damage;
     private PlayerStateSystem statesSystem => GetComponent<PlayerStateSystem>();
-
+    private CombatSystem combat => GetComponent<CombatSystem>();
     public Collider enemy;
 
     private void Awake() => enemy = null;
@@ -35,6 +36,13 @@ public class CollisionDetection : MonoBehaviour
         if (statesSystem.combatState == States.CombatState.attacking && enemy != null)
         {
             enemy.GetComponent<InimigoPrototipo>().PlayAnimation(statesSystem.attackType);
+
+            if (combat.attackType == 1)
+                enemy.GetComponent<InimigoPrototipo>().Damage(damage);
+            else if (combat.attackType == 2)
+                enemy.GetComponent<InimigoPrototipo>().Damage(damage*2);
+
+
         }
     }
 }
