@@ -17,7 +17,7 @@ public class MovementHandler : MonoBehaviour
     [Header("Valores Atuais")]
     [SerializeField] private Vector3 currentSpeed;
     [SerializeField, Range(-1, 1)] private float horizontalSpeed;
-    [SerializeField, Range(-1, 1)] private float verticalInput;
+    [SerializeField, Range(-1, 1)] private float verticalSpeed;
 
     [Header("Enemy Control")]
     [SerializeField] private bool rotateTowardEnemy;
@@ -59,13 +59,16 @@ public class MovementHandler : MonoBehaviour
         else if (_horizontalInput == 0 && horizontalSpeed < 0 && horizontalSpeed < zerarEm) horizontalSpeed += desaccelerationSpeed * Time.deltaTime;
         else if (_horizontalInput == 0 && (horizontalSpeed < zerarEm || horizontalSpeed > zerarEm)) horizontalSpeed = 0;
 
-        if (_verticalInput > 0 && verticalInput <= movementSpeed) verticalInput += accelerationSpeed * Time.deltaTime;
-        else if (_verticalInput < 0 && verticalInput >= -movementSpeed) verticalInput -= accelerationSpeed * Time.deltaTime;
-        else if (_verticalInput == 0 && verticalInput > 0 && verticalInput > zerarEm) verticalInput -= desaccelerationSpeed * Time.deltaTime;
-        else if (_verticalInput == 0 && verticalInput < 0 && verticalInput < zerarEm) verticalInput += desaccelerationSpeed * Time.deltaTime;
-        else if (_verticalInput == 0 && (verticalInput < zerarEm || verticalInput > zerarEm)) verticalInput = 0;
+        if (_verticalInput > 0 && verticalSpeed <= movementSpeed) verticalSpeed += accelerationSpeed * Time.deltaTime;
+        else if (_verticalInput < 0 && verticalSpeed >= -movementSpeed) verticalSpeed -= accelerationSpeed * Time.deltaTime;
+        else if (_verticalInput == 0 && verticalSpeed > 0 && verticalSpeed > zerarEm) verticalSpeed -= desaccelerationSpeed * Time.deltaTime;
+        else if (_verticalInput == 0 && verticalSpeed < 0 && verticalSpeed < zerarEm) verticalSpeed += desaccelerationSpeed * Time.deltaTime;
+        else if (_verticalInput == 0 && (verticalSpeed < zerarEm || verticalSpeed > zerarEm)) verticalSpeed = 0;
 
-        var movementVector = MoveTowardTarget(new Vector3(horizontalSpeed, 0, verticalInput));
+        if ((_horizontalInput > 0 && horizontalSpeed < 0) || (_horizontalInput < 0 && horizontalSpeed > 0)) horizontalSpeed = 0;
+        if ((_verticalInput > 0 && verticalSpeed < 0) || (_verticalInput < 0 && verticalSpeed > 0)) verticalSpeed = 0;
+
+        var movementVector = MoveTowardTarget(new Vector3(horizontalSpeed, 0, verticalSpeed));
         lastVelocity = movementVector;
     }
 

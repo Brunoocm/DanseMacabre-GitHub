@@ -17,5 +17,6 @@ public class AnimationEvents : MonoBehaviour
         {
             combatSystem.attacking = false;
         }
+        else combatSystem.attacking = false;
     }
 }

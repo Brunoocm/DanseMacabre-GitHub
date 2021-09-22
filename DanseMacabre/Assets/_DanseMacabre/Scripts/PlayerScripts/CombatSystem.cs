@@ -85,6 +85,8 @@ public class CombatSystem : MonoBehaviour
             attackType++;
             attacking = true;
         }
+
+        if (attackType > totalAttacks) attackType = totalAttacks;
     }
 
     public void Block(bool value)
