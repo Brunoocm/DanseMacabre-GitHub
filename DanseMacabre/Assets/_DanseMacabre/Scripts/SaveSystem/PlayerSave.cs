@@ -19,5 +19,7 @@ public class PlayerSave
         playerPos[0] = player.transform.position.x;
         playerPos[1] = player.transform.position.y;
         playerPos[2] = player.transform.position.z;
+
+        //salvar resolução
     }
 }

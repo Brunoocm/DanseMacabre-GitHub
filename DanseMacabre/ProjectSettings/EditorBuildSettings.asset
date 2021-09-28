@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/_DanseMacabre/Scenes/Menu.unity
+    guid: 7797d14c32bc56c4da0bb8a6eff9bb64
+  - enabled: 1
     path: Assets/_DanseMacabre/Scenes/Cenario.unity
     guid: 07e12729140927644844980c921ba365
   m_configObjects: {}
