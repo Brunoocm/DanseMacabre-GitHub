@@ -22,4 +22,10 @@ public class PlayerSave
 
         //salvar resolução
     }
+
+    public Vector3 checkpointPos;
+    public PlayerSave (RespawnSystem checkpoint)
+    {
+        checkpointPos = checkpoint.m_spawn;
+    }
 }

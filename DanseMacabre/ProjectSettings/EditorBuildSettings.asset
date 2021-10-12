@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_DanseMacabre/Scenes/Cenario.unity
     guid: 07e12729140927644844980c921ba365
+  - enabled: 1
+    path: Assets/_DanseMacabre/Scenes/CenaTutorial.unity
+    guid: 8fd8277252185924ead72cb323d17d46
+  - enabled: 1
+    path: Assets/_DanseMacabre/Scenes/CenaMorte.unity
+    guid: 6e491f24cd125144f998018a67cb054c
   m_configObjects: {}

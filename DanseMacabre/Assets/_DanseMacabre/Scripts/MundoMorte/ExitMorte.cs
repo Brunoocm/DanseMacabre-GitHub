@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ExitMorte : MonoBehaviour
 {
@@ -28,8 +29,8 @@ public class ExitMorte : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            print("Reviver");
+            FindObjectOfType<RespawnSystem>().LoadSceneInicial();
         }
-    
+
     }
 }
