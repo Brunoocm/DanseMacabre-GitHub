@@ -16,14 +16,7 @@ public class InputSystem : MonoBehaviour
 
     private void Update()
     {
-        horizontalInput = Input.GetAxisRaw("Horizontal");
-        verticalInput = Input.GetAxisRaw("Vertical");
-        InputVector = new Vector2(horizontalInput, verticalInput);
-
-        MousePosition = Input.mousePosition;
-
-        movementHandler.TryMove(horizontalInput, verticalInput);
-        animationHandler.GetMovementInput(horizontalInput, verticalInput);
+   
 
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.S))
         {
@@ -53,5 +46,17 @@ public class InputSystem : MonoBehaviour
         }
         else
             combatSystem.Block(false);
+    }
+
+    private void FixedUpdate()
+    {
+        horizontalInput = Input.GetAxisRaw("Horizontal");
+        verticalInput = Input.GetAxisRaw("Vertical");
+        InputVector = new Vector2(horizontalInput, verticalInput);
+
+        MousePosition = Input.mousePosition;
+
+        movementHandler.TryMove(horizontalInput, verticalInput);
+        animationHandler.GetMovementInput(horizontalInput, verticalInput);
     }
 }
