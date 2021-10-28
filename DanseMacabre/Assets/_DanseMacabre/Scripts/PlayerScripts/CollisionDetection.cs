@@ -17,7 +17,7 @@ public class CollisionDetection : MonoBehaviour
         {
             enemy = other;
 
-            print("hit");  
+            print("hit");
         }
     }
 
@@ -27,7 +27,7 @@ public class CollisionDetection : MonoBehaviour
         {
             enemy = null;
         }
-       
+
     }
 
     public void TryDamage()
@@ -40,7 +40,7 @@ public class CollisionDetection : MonoBehaviour
             if (combat.attackType == 1)
                 enemy.GetComponent<InimigoPrototipo>().Damage(damage);
             else if (combat.attackType == 2)
-                enemy.GetComponent<InimigoPrototipo>().Damage(damage*2);
+                enemy.GetComponent<InimigoPrototipo>().Damage(damage * 2);
 
 
         }
