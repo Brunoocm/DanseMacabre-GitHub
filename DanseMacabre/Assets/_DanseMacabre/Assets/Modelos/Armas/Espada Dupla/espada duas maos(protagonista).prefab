@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 5896603868329067511}
   - component: {fileID: 7384542671559052370}
   - component: {fileID: 4728741291807815832}
+  - component: {fileID: 4921755749675609791}
+  - component: {fileID: 1396132297991993304}
   m_Layer: 0
   m_Name: espada duas maos(protagonista)
   m_TagString: Untagged
@@ -83,3 +85,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4921755749675609791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6529974640415250765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82c7c0cfb55902d429fd8409c15c2820, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!136 &1396132297991993304
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6529974640415250765}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.0013693505
+  m_Height: 0.0008258747
+  m_Direction: 2
+  m_Center: {x: -0.000004371594, y: -0.00007424521, z: -0.000068393}

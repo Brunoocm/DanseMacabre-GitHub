@@ -5,6 +5,7 @@ using UnityEngine;
 public class AnimationEvents : MonoBehaviour
 {
     private CombatSystem combatSystem => GetComponentInParent<CombatSystem>();
+    private HealthSystem healthSystem => GetComponentInParent<HealthSystem>();
 
     public void EndAttack(int type)
     {
@@ -30,5 +31,10 @@ public class AnimationEvents : MonoBehaviour
     public void EndAttackVoid()
     {
         GetComponentInParent<CollisionDetection>().EndAttackVoid();
+    }
+
+    public void EnableMove()
+    {
+        healthSystem.EnableMove();
     }
 }

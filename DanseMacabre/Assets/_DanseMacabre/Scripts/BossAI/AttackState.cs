@@ -11,6 +11,7 @@ public class AttackState : State
     public EnemyAttack currentAttack;
 
     public int num;
+    public int currentDamage;
     public override State Tick(EnemyManager enemyManager, EnemyStats enemyStats, EnemyAnimatorManager enemyAnimatorManager)
     {
         Vector3 targetDirection = enemyManager.currentTarget.transform.position - transform.position;
@@ -105,8 +106,8 @@ public class AttackState : State
                     if (temporaryScore > randomValue)
                     {
                         //num++;
-
                         currentAttack = enemyAttackAction;
+                        currentDamage = currentAttack.attackScore;
                     }
                 }
             }

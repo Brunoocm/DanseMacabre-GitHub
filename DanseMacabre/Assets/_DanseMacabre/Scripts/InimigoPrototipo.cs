@@ -11,7 +11,8 @@ public class InimigoPrototipo : MonoBehaviour
     public GameObject healthBar;
     public Slider slider;
     public Slider sliderBack;
-    public EnemyAnimatorManager enemyAnimatorManager;
+    public EnemyManager enemyManager;
+    public DieState dieState;
 
     private Animator animator => GetComponent<Animator>();
     private float inv;
@@ -48,7 +49,7 @@ public class InimigoPrototipo : MonoBehaviour
             m_health = 0;
             if (boss)
             {
-                enemyAnimatorManager.PlayTargetAnimation("Dying", true);
+                enemyManager.currentState = dieState;
 
             }
             else
