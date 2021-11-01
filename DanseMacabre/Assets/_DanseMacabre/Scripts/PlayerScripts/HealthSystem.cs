@@ -76,7 +76,7 @@ public class HealthSystem : MonoBehaviour
     }
     public void PlayTargetAnimation(string targetAnim, bool isInteracting)
     {
-        anim.applyRootMotion = isInteracting;
+        anim.applyRootMotion = false;
         anim.SetBool("Base Layer", isInteracting);
         anim.CrossFade(targetAnim, 0.2f);
     }
