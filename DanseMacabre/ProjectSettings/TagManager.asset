@@ -8,6 +8,7 @@ TagManager:
   - Casa
   - Key
   - DoorLocked
+  - EnemyTakeDamage
   layers:
   - Default
   - TransparentFX
@@ -18,9 +19,9 @@ TagManager:
   - Player
   - Casa
   - CharacterColliderBlock
-  - 
-  - 
-  - 
+  - ColliderEnemy
+  - ColliderPlayer
+  - Enemy
   - 
   - 
   - 

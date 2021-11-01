@@ -16,7 +16,10 @@ public class EnemyLocomotionManager : MonoBehaviour
     private void Start()
     {
     }
-
+    private void FixedUpdate()
+    {
+        
+    }
     public void HandleMoveToTarget()
     {
 

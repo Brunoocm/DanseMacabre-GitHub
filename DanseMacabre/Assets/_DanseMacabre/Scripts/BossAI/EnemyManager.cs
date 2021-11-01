@@ -12,6 +12,7 @@ public class EnemyManager : MonoBehaviour
     public NavMeshAgent navmeshAgent;
     public State currentState;
     public HealthSystem currentTarget;
+    public Vector3 currentRotation;
     public Rigidbody enemyRigidBody;
 
     //public EnemyAttack[] enemyAttacks; //EnemyAttackActions;
@@ -52,8 +53,9 @@ public class EnemyManager : MonoBehaviour
     private void FixedUpdate()
     {
         HandleStateMachine();
+        navmeshAgent.transform.localPosition = Vector3.zero;
+        navmeshAgent.transform.localRotation = Quaternion.identity;
 
-      
     }
 
     private void HandleStateMachine()
