@@ -60712,8 +60712,22 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.5555556
+  - time: 0.44444445
     functionName: TryDamage
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.44444445
+    functionName: AttackVoid
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.6888889
+    functionName: EndAttackVoid
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

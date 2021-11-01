@@ -22,5 +22,13 @@ public class AnimationEvents : MonoBehaviour
     public void TryDamage()
     {
         GetComponentInParent<CollisionDetection>().TryDamage();
+    }  
+    public void AttackVoid()
+    {
+        GetComponentInParent<CollisionDetection>().AttackVoid();
+    }  
+    public void EndAttackVoid()
+    {
+        GetComponentInParent<CollisionDetection>().EndAttackVoid();
     }
 }

@@ -9,8 +9,13 @@ public class CollisionDetection : MonoBehaviour
     private CombatSystem combat => GetComponent<CombatSystem>();
     public Collider enemy;
 
+    private bool isAttacking;
     private void Awake() => enemy = null;
 
+    private void Update()
+    {
+        if(isAttacking) TryDamage();        
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Enemy"))
@@ -35,14 +40,24 @@ public class CollisionDetection : MonoBehaviour
         //coloquei o collider na espada pra rotacionar junto com o jogador e ficar mais preciso
         if (statesSystem.combatState == States.CombatState.attacking && enemy != null)
         {
-            enemy.GetComponent<InimigoPrototipo>().PlayAnimation(statesSystem.attackType);
+            //enemy.GetComponent<InimigoPrototipo>().PlayAnimation(statesSystem.attackType);
 
             if (combat.attackType == 1)
                 enemy.GetComponent<InimigoPrototipo>().Damage(damage);
             else if (combat.attackType == 2)
-                enemy.GetComponent<InimigoPrototipo>().Damage(damage * 2);
+                enemy.GetComponent<InimigoPrototipo>().Damage(damage * 4);
 
 
         }
+    }
+
+    public void AttackVoid()
+    {
+        isAttacking = true;
+    }
+
+    public void EndAttackVoid()
+    {
+        isAttacking = false;
     }
 }
