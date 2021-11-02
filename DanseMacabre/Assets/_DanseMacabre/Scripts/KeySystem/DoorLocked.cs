@@ -9,7 +9,7 @@ public class DoorLocked : MonoBehaviour
     Animator anim;
     void Start()
     {
-        //anim = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -20,6 +20,7 @@ public class DoorLocked : MonoBehaviour
     public void OpenTheDoor()
     {
         print("open");
-        Destroy(gameObject);
+        anim.SetTrigger("Open");
+        //Destroy(gameObject);
     }
 }

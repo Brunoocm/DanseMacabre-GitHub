@@ -6443,27 +6443,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5896603868329067511, guid: cb171d8e8b2c2234e9d4f2bb2b0a02f3, type: 3}
       propertyPath: m_LocalScale.x
-      value: 304.84607
+      value: 228.72905
       objectReference: {fileID: 0}
     - target: {fileID: 5896603868329067511, guid: cb171d8e8b2c2234e9d4f2bb2b0a02f3, type: 3}
       propertyPath: m_LocalScale.y
-      value: 68.06793
+      value: 51.072052
       objectReference: {fileID: 0}
     - target: {fileID: 5896603868329067511, guid: cb171d8e8b2c2234e9d4f2bb2b0a02f3, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2758.0957
+      value: 2069.4268
       objectReference: {fileID: 0}
     - target: {fileID: 5896603868329067511, guid: cb171d8e8b2c2234e9d4f2bb2b0a02f3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.998
+      value: -0.829
       objectReference: {fileID: 0}
     - target: {fileID: 5896603868329067511, guid: cb171d8e8b2c2234e9d4f2bb2b0a02f3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.056
+      value: 0.079
       objectReference: {fileID: 0}
     - target: {fileID: 5896603868329067511, guid: cb171d8e8b2c2234e9d4f2bb2b0a02f3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.265
+      value: -0.187
       objectReference: {fileID: 0}
     - target: {fileID: 5896603868329067511, guid: cb171d8e8b2c2234e9d4f2bb2b0a02f3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8632,8 +8632,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132149009286165}
   m_LocalRotation: {x: -0, y: 0.22159442, z: -0, w: 0.9751389}
-  m_LocalPosition: {x: 4.341521, y: 0.01999998, z: -11.471877}
-  m_LocalScale: {x: 1.6414, y: 1.6414, z: 1.6414}
+  m_LocalPosition: {x: 4.1819, y: -0.12, z: -11.398}
+  m_LocalScale: {x: 1.9368519, y: 1.9368519, z: 1.9368519}
   m_Children:
   - {fileID: 1072090820}
   - {fileID: 1939230450}
@@ -8805,7 +8805,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2271dbe0864a4ba4aa55301a0ae8c17c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 40
+  health: 60
   boss: 1
   healthBar: {fileID: 1727304557}
   slider: {fileID: 725912032}
