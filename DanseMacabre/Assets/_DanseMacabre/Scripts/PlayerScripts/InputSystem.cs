@@ -42,7 +42,15 @@ public class InputSystem : MonoBehaviour
 
         if (Input.GetMouseButton(1))
         {
-            combatSystem.Block(true);
+            if (!combatSystem.attacking)
+            {
+                combatSystem.Block(true);
+
+            }
+            else
+            {
+                combatSystem.Block(false);
+            }
         }
         else
             combatSystem.Block(false);

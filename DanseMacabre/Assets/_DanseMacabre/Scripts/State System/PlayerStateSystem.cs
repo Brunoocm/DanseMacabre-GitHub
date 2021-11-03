@@ -8,18 +8,23 @@ public class PlayerStateSystem : StatesSystem
     private CombatSystem combatSystem => GetComponent<CombatSystem>();
     private AnimationHandler animationHandler => GetComponent<AnimationHandler>();
 
+    public bool isEnemy;
     [HideInInspector] public bool canMove;
     [HideInInspector] public int attackType;
     private bool isWalking;
 
     private void Update()
     {
-        inCombat = combatSystem.hasEnemy;
+        if(!isEnemy)
+        {
+            inCombat = combatSystem.hasEnemy;
+            UpdateStates();
+            UpdateCurrentInfo();
+            UpdateMovementHandler();
+            UpdateAnimationHandler();
+        }
 
-        UpdateStates();
-        UpdateCurrentInfo();
-        UpdateMovementHandler();
-        UpdateAnimationHandler();
+    
     }
 
     private void UpdateStates()

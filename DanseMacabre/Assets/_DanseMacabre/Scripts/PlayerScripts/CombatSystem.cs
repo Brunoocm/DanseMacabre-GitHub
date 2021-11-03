@@ -8,6 +8,7 @@ public class CombatSystem : MonoBehaviour
     [Header("Combat Info")]
     public bool inCombat;
     public bool attacking;
+    public bool blocking;
     public int attackType;
     public int totalAttacks;
     public States.CombatState combatState;
@@ -16,7 +17,6 @@ public class CombatSystem : MonoBehaviour
     public Enemy currentEnemy;
     public bool hasEnemy;
 
-    private bool blocking;
 
     private void Update()
     {

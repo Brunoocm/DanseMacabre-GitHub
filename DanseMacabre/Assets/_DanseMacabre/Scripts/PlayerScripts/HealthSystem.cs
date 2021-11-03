@@ -5,17 +5,26 @@ using UnityEngine.UI;
 
 public class HealthSystem : MonoBehaviour
 {
+    [Header("HEALTH")]
     public float maxHealth;
     public float health;
-    public float stamina;
 
     private float m_health;
-
-    public InputSystem inputSystem;
 
     public Slider slider;
     public Slider sliderBack;
 
+    [Header("HEALTH")]
+    public float maxStamina;
+    public float stamina;
+
+    private float m_stamina;
+
+    public Slider sliderStamina;
+    public Slider sliderBackStamina;
+
+    public InputSystem inputSystem;
+    public CombatSystem combatSystem;
     public bool isLock;
     private float inv;
 
@@ -27,13 +36,18 @@ public class HealthSystem : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody>();
         inputSystem = GetComponent<InputSystem>();
+
         slider.maxValue = maxHealth;
-        sliderBack.maxValue = maxHealth;
+        sliderBack.maxValue = maxHealth;  
+
+        sliderStamina.maxValue = maxStamina;
+        sliderBackStamina.maxValue = maxStamina;
     }
 
     private void Update()
     {
         HealthBar();
+        StaminaBar();
     }
     void HealthBar()
     {
@@ -63,21 +77,45 @@ public class HealthSystem : MonoBehaviour
 
         }
     }
+    void StaminaBar()
+    {
+        sliderStamina.value = stamina;
+        sliderBackStamina.value = m_stamina;
+
+        if (stamina > 0)
+        {
+            if (m_stamina > stamina)
+            {
+                m_stamina -= 1.2f * Time.deltaTime;
+            }
+        }
+        if (stamina <= 0)
+        {
+
+        }
+    }
     public void TakeDamage(int dano)
     {
-        if (inv <= 0)
+        if (!combatSystem.blocking)
         {
-            inputSystem.enabled = false;
-            m_health = health;
-            health -= dano;
-            PlayTargetAnimation("Falling", true);
-            inv = 1;
+            if (inv <= 0)
+            {
+                m_health = health;
+                health -= dano;
+                PlayTargetAnimation("Falling", true);
+                inv = 3;
+            }
+        }
+        else
+        {
+            m_stamina = stamina;
+            stamina -= 5;
         }
     }
     public void PlayTargetAnimation(string targetAnim, bool isInteracting)
     {
         anim.applyRootMotion = false;
-        anim.SetBool("Base Layer", isInteracting);
+        //anim.SetBool("Base Layer", isInteracting);
         anim.CrossFade(targetAnim, 0.2f);
     }
 
@@ -85,7 +123,13 @@ public class HealthSystem : MonoBehaviour
     {
         inputSystem.enabled = true;
 
+    } 
+    public void DesableMove()
+    {
+        inputSystem.enabled = false;
+
     }
+ 
     public void SavePlayer()
     {
         SaveSystem.SavePlayer(this);

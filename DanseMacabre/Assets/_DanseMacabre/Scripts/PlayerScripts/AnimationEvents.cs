@@ -36,5 +36,9 @@ public class AnimationEvents : MonoBehaviour
     public void EnableMove()
     {
         healthSystem.EnableMove();
+    }  
+    public void DesableMove()
+    {
+        healthSystem.DesableMove();
     }
 }
