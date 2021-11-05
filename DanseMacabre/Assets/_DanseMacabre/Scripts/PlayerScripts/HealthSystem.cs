@@ -17,8 +17,10 @@ public class HealthSystem : MonoBehaviour
     [Header("HEALTH")]
     public float maxStamina;
     public float stamina;
+    [HideInInspector] public float m_stamina;
 
-    private float m_stamina;
+    public int attackStamina;
+    public int defStamina;
 
     public Slider sliderStamina;
     public Slider sliderBackStamina;
@@ -108,8 +110,9 @@ public class HealthSystem : MonoBehaviour
         }
         else
         {
+            PlayTargetAnimation("Shield", true);
             m_stamina = stamina;
-            stamina -= 5;
+            stamina -= defStamina;
         }
     }
     public void PlayTargetAnimation(string targetAnim, bool isInteracting)

@@ -17,7 +17,7 @@ public class CombatSystem : MonoBehaviour
     public Enemy currentEnemy;
     public bool hasEnemy;
 
-
+    private HealthSystem healthSystem => GetComponent<HealthSystem>();
     private void Update()
     {
         hasEnemy = currentEnemy.enemy != null ? true : false;
@@ -75,14 +75,34 @@ public class CombatSystem : MonoBehaviour
     {
         if (!blocking) //coloquei if(!blocking) pra nao ativar no meio da espadada
         {
-            if (attacking)
+            if (attacking && attackType < 2)
             {
-                if ((attackType + 1) <= totalAttacks) attackType++;
+              
+                if ((attackType + 1) <= totalAttacks)
+                {
+                    if(healthSystem.stamina >= healthSystem.attackStamina)
+                    {
+                        attackType++;
+                        healthSystem.m_stamina = healthSystem.stamina;
+                        healthSystem.stamina -= healthSystem.attackStamina; //diminui Stamina
+                        attacking = true;
+                    }
+                }
             }
-            else
+            else if(attackType < 2)
+            {             
+                if (healthSystem.stamina >= healthSystem.attackStamina)
+                {
+                    attackType++;
+                    healthSystem.m_stamina = healthSystem.stamina;
+                    healthSystem.stamina -= healthSystem.attackStamina; //diminui Stamina
+                    attacking = true;
+                }
+            }
+            else if(attackType == 2)
             {
-                attackType++;
-                attacking = true;
+                attacking = false;
+
             }
 
             if (attackType > totalAttacks) attackType = totalAttacks;

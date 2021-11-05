@@ -14,6 +14,8 @@ public class InputSystem : MonoBehaviour
     private CameraHandler cameraHandler => GetComponent<CameraHandler>();
     private AnimationHandler animationHandler => GetComponent<AnimationHandler>();
 
+    private HealthSystem healthSystem => GetComponent<HealthSystem>();
+
     private void Update()
     {
    

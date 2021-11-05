@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AttackFoward
   m_EditorClassIdentifier: 
   actionAnimation: AttackFront 0
-  attackScore: 3
+  attackScore: 4
   recoveryTime: 4.5
   maximumAttackAngle: 90
   minimumAttackAngle: -90
