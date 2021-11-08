@@ -17,6 +17,7 @@ public class AnimationHandler : MonoBehaviour
 
 
     private bool inCombat;
+    HealthSystem healthSystem => GetComponentInChildren<HealthSystem>();
 
     private void Update()
     {
@@ -101,5 +102,11 @@ public class AnimationHandler : MonoBehaviour
             anim.SetBool("Blocking", true);
         else
             anim.SetBool("Blocking", false);
+
+        if(healthSystem.recovery)
+            anim.SetBool("Recovering", true);
+        else
+            anim.SetBool("Recovering", false);
+
     }
 }

@@ -58,7 +58,7 @@ public class CombatSystem : MonoBehaviour
     public void TryTarget()
     {
         if (currentEnemy != null)
-            currentEnemy.UpdateEnemy(GameObject.FindGameObjectWithTag("Enemy"));
+            currentEnemy.UpdateEnemy(GameObject.FindGameObjectWithTag("LockEnemy"));
 
         if (hasEnemy)
             UnlockTarget();
@@ -80,32 +80,26 @@ public class CombatSystem : MonoBehaviour
               
                 if ((attackType + 1) <= totalAttacks)
                 {
-                    if(healthSystem.stamina >= healthSystem.attackStamina)
-                    {
+                    
                         attackType++;
-                        healthSystem.m_stamina = healthSystem.stamina;
-                        healthSystem.stamina -= healthSystem.attackStamina; //diminui Stamina
                         attacking = true;
-                    }
+                    
                 }
             }
             else if(attackType < 2)
             {             
-                if (healthSystem.stamina >= healthSystem.attackStamina)
-                {
+               
                     attackType++;
-                    healthSystem.m_stamina = healthSystem.stamina;
-                    healthSystem.stamina -= healthSystem.attackStamina; //diminui Stamina
                     attacking = true;
-                }
+                
             }
-            else if(attackType == 2)
-            {
-                attacking = false;
+            //else if(attackType == 2)
+            //{
+            //    attacking = false;
 
-            }
+            //}
 
-            if (attackType > totalAttacks) attackType = totalAttacks;
+            if (attackType > totalAttacks) attackType = 0;
         }
         else
         {
@@ -118,6 +112,12 @@ public class CombatSystem : MonoBehaviour
     public void Block(bool value)
     {
         blocking = value;
+    }
+
+    public void PerdeStamina()
+    {
+        healthSystem.m_stamina = healthSystem.stamina;
+        healthSystem.stamina -= healthSystem.attackStamina; //diminui Stamina
     }
 }
 
@@ -133,20 +133,21 @@ public class Enemy
 
     public void UpdateEnemy(GameObject _enemy)
     {
-        //Seta valores padr�o se n�o tiver inimigo
-        if (_enemy == null)
-        {
-            enemyStates = null;
-            enemyCombatSystem = null;
-            enemyCombatState = States.CombatState.inactive;
-            enemyMasterState = States.MasterState.idle;
-            return;
-        }
-
         enemy = _enemy;
-        enemyStates = enemy.GetComponent<StatesSystem>();
-        enemyCombatSystem = enemy.GetComponent<CombatSystem>();
-        enemyMasterState = enemyStates.masterState;
-        enemyCombatState = enemyStates.combatState;
+
+        ////Seta valores padr�o se n�o tiver inimigo
+        //if (_enemy == null)
+        //{
+        //    enemyStates = null;
+        //    enemyCombatSystem = null;
+        //    enemyCombatState = States.CombatState.inactive;
+        //    enemyMasterState = States.MasterState.idle;
+        //    return;
+        //}
+
+        //enemyStates = enemy.GetComponent<StatesSystem>();
+        //enemyCombatSystem = enemy.GetComponent<CombatSystem>();
+        //enemyMasterState = enemyStates.masterState;
+        //enemyCombatState = enemyStates.combatState;
     }
 }

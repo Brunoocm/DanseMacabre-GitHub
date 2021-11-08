@@ -14,20 +14,26 @@ public class HealthSystem : MonoBehaviour
     public Slider slider;
     public Slider sliderBack;
 
-    [Header("HEALTH")]
+    [Header("STAMINA")]
     public float maxStamina;
     public float stamina;
     [HideInInspector] public float m_stamina;
 
     public int attackStamina;
     public int defStamina;
+    public bool recovery;
 
     public Slider sliderStamina;
     public Slider sliderBackStamina;
 
+    public Image fillArea;
+    Color colorMain;
+  
+
     public InputSystem inputSystem;
     public CombatSystem combatSystem;
     public bool isLock;
+
     private float inv;
 
 
@@ -38,6 +44,7 @@ public class HealthSystem : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody>();
         inputSystem = GetComponent<InputSystem>();
+        colorMain = fillArea.color;
 
         slider.maxValue = maxHealth;
         sliderBack.maxValue = maxHealth;  
@@ -48,8 +55,15 @@ public class HealthSystem : MonoBehaviour
 
     private void Update()
     {
+        RecoveryTime();
         HealthBar();
         StaminaBar();
+
+        if(m_stamina <= stamina && stamina < maxStamina)
+        {
+            stamina += 5.5f * Time.deltaTime;
+            m_stamina += 5.5f * Time.deltaTime;
+        }
     }
     void HealthBar()
     {
@@ -84,15 +98,35 @@ public class HealthSystem : MonoBehaviour
         sliderStamina.value = stamina;
         sliderBackStamina.value = m_stamina;
 
-        if (stamina > 0)
+        if (stamina >= maxStamina)
+        {
+            recovery = false;
+        }
+        else if (stamina > 0)
         {
             if (m_stamina > stamina)
             {
                 m_stamina -= 1.2f * Time.deltaTime;
             }
         }
-        if (stamina <= 0)
+        else if (stamina <= 0)
         {
+            recovery = true;
+        }
+        
+    }
+
+    void RecoveryTime()
+    {
+        if (recovery)
+        {
+            fillArea.color = Color.red;
+            stamina += 5.5f * Time.deltaTime;
+            m_stamina += 5.5f * Time.deltaTime;
+        }
+        else
+        {
+            fillArea.color = colorMain;
 
         }
     }

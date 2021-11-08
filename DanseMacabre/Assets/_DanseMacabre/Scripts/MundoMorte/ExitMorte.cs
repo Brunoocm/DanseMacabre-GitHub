@@ -7,6 +7,7 @@ public class ExitMorte : MonoBehaviour
 {
 
     Animator anim;
+    private bool oneTime;
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -29,7 +30,11 @@ public class ExitMorte : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            FindObjectOfType<RespawnSystem>().LoadSceneInicial();
+            if (!oneTime)
+            {
+                FindObjectOfType<RespawnSystem>().LoadSceneInicial();
+                oneTime = true;
+            }
         }
 
     }

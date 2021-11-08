@@ -41,4 +41,9 @@ public class AnimationEvents : MonoBehaviour
     {
         healthSystem.DesableMove();
     }
+
+    public void PerdeStamina()
+    {
+        combatSystem.PerdeStamina();
+    }
 }

@@ -60,6 +60,6 @@ public class RespawnSystem : MonoBehaviour
     }
     public void LoadSceneInicial()
     {
-        SceneManager.LoadSceneAsync("CenaTutorial");
+        SceneManager.LoadSceneAsync("cenario");
     }
 }

@@ -9,6 +9,7 @@ TagManager:
   - Key
   - DoorLocked
   - EnemyTakeDamage
+  - LockEnemy
   layers:
   - Default
   - TransparentFX
