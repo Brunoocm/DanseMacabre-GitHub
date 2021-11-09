@@ -107,11 +107,34 @@ MonoBehaviour:
   Path: FMOD_Projects/DanseMacabreFMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637720810695661122
+  lastModified: 637720847676773081
   FileSizes:
   - Name: Desktop
-    Value: 5801344
+    Value: 5803968
   Exists: 1
+--- !u!114 &-4742954570946587696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Passo1
+  m_EditorClassIdentifier: 
+  Path: event:/Passo1
+  guid: 40584134151f8047a283837f640d38bc
+  Banks:
+  - {fileID: -5598060165990462611}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 85
+  Length: 494
 --- !u!114 &-4426736008402465553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,10 +173,10 @@ MonoBehaviour:
   Path: FMOD_Projects/DanseMacabreFMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637720810695691109
+  lastModified: 637720847676813089
   FileSizes:
   - Name: Desktop
-    Value: 1508
+    Value: 1556
   Exists: 1
 --- !u!114 &-805524078633501403
 MonoBehaviour:
@@ -222,7 +245,6 @@ MonoBehaviour:
   - {fileID: 5605173729982637497}
   - {fileID: -6834889845409489465}
   - {fileID: -712072198164909640}
-  - {fileID: 3236183567006777380}
   - {fileID: -6842073113793277112}
   - {fileID: 3824979712750364618}
   - {fileID: 7918429385343511389}
@@ -231,12 +253,14 @@ MonoBehaviour:
   - {fileID: 2587485707027264841}
   - {fileID: 7958488470188722862}
   - {fileID: -4426736008402465553}
+  - {fileID: -4742954570946587696}
+  - {fileID: 3933802133231465529}
   EditorParameters: []
   MasterBanks:
   - {fileID: -5598060165990462611}
   StringsBanks:
   - {fileID: -3606357991165475021}
-  stringsBankWriteTime: 637720810695691109
+  stringsBankWriteTime: 637720847676813089
   cacheVersion: 8
 --- !u!114 &220028707472374520
 MonoBehaviour:
@@ -330,6 +354,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 632
+--- !u!114 &3933802133231465529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/PassosNovos
+  m_EditorClassIdentifier: 
+  Path: event:/PassosNovos
+  guid: ff48fce8e690884688a24b6e10d30e0e
+  Banks:
+  - {fileID: -5598060165990462611}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1100
 --- !u!114 &4688251545389864785
 MonoBehaviour:
   m_ObjectHideFlags: 0

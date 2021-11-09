@@ -186,7 +186,7 @@ public class HealthSystem : MonoBehaviour
 
     public void WalkSound()
     {
-        FMODUnity.RuntimeManager.PlayOneShot("event:/passos", GetComponent<Transform>().position);
+        FMODUnity.RuntimeManager.PlayOneShot("event:/PassosNovos", GetComponent<Transform>().position);
 
     }
 }

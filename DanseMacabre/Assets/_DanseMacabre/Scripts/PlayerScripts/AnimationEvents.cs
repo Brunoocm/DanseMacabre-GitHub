@@ -46,4 +46,9 @@ public class AnimationEvents : MonoBehaviour
     {
         combatSystem.PerdeStamina();
     }
+
+    public void WalkSound()
+    {
+        healthSystem.WalkSound();
+    }
 }
