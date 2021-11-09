@@ -21,8 +21,6 @@ public class CollisionDetection : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             enemy = other;
-
-            print("hit");
         }
     }
 

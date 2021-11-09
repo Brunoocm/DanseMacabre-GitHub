@@ -23,6 +23,75 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 50
   Length: 2659
+--- !u!114 &-7800338336800313938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Guerra de espadas
+  m_EditorClassIdentifier: 
+  Path: event:/Guerra de espadas
+  guid: c47cd9f28ac752488b53e590b6da28f9
+  Banks:
+  - {fileID: -5598060165990462611}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 78737
+--- !u!114 &-6842073113793277112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/fogo 2
+  m_EditorClassIdentifier: 
+  Path: event:/fogo 2
+  guid: 64edf035090c1545813503dad2a3c5b0
+  Banks:
+  - {fileID: -5598060165990462611}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 17343
+--- !u!114 &-6834889845409489465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/cavalo cavalgando
+  m_EditorClassIdentifier: 
+  Path: event:/cavalo cavalgando
+  guid: 2be4cc8d1b97f7419479704e469e8391
+  Banks:
+  - {fileID: -5598060165990462611}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 7560
 --- !u!114 &-5598060165990462611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38,11 +107,34 @@ MonoBehaviour:
   Path: FMOD_Projects/DanseMacabreFMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637678443281911575
+  lastModified: 637720810695661122
   FileSizes:
   - Name: Desktop
-    Value: 2381088
+    Value: 5801344
   Exists: 1
+--- !u!114 &-4426736008402465553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/ambienta\xE7\xE3o guerra"
+  m_EditorClassIdentifier: 
+  Path: "event:/ambienta\xE7\xE3o guerra"
+  guid: 34ab9290754c5c459a598993e0adceaf
+  Banks:
+  - {fileID: -5598060165990462611}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 63157
 --- !u!114 &-3606357991165475021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58,10 +150,10 @@ MonoBehaviour:
   Path: FMOD_Projects/DanseMacabreFMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637678443281951567
+  lastModified: 637720810695691109
   FileSizes:
   - Name: Desktop
-    Value: 968
+    Value: 1508
   Exists: 1
 --- !u!114 &-805524078633501403
 MonoBehaviour:
@@ -83,6 +175,29 @@ MonoBehaviour:
   - Name: Desktop
     Value: 28064
   Exists: 1
+--- !u!114 &-712072198164909640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Pessoas gritando
+  m_EditorClassIdentifier: 
+  Path: event:/Pessoas gritando
+  guid: 2eb0adf5883c624795c1fdb228427883
+  Banks:
+  - {fileID: -5598060165990462611}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 18504
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104,13 +219,117 @@ MonoBehaviour:
   - {fileID: 4688251545389864785}
   - {fileID: 7614322244458226386}
   - {fileID: 6460278317219287402}
+  - {fileID: 5605173729982637497}
+  - {fileID: -6834889845409489465}
+  - {fileID: -712072198164909640}
+  - {fileID: 3236183567006777380}
+  - {fileID: -6842073113793277112}
+  - {fileID: 3824979712750364618}
+  - {fileID: 7918429385343511389}
+  - {fileID: 220028707472374520}
+  - {fileID: -7800338336800313938}
+  - {fileID: 2587485707027264841}
+  - {fileID: 7958488470188722862}
+  - {fileID: -4426736008402465553}
   EditorParameters: []
   MasterBanks:
   - {fileID: -5598060165990462611}
   StringsBanks:
   - {fileID: -3606357991165475021}
-  stringsBankWriteTime: 637678443281951567
+  stringsBankWriteTime: 637720810695691109
   cacheVersion: 8
+--- !u!114 &220028707472374520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/vento 2
+  m_EditorClassIdentifier: 
+  Path: event:/vento 2
+  guid: b6f5cb322244a74986089526b229a153
+  Banks:
+  - {fileID: -5598060165990462611}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 10972
+--- !u!114 &2587485707027264841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Parry
+  m_EditorClassIdentifier: 
+  Path: event:/Parry
+  guid: dc9f7602cc1baf4bb5d00ef0962d2fec
+  Banks:
+  - {fileID: -5598060165990462611}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1218
+--- !u!114 &3236183567006777380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Passos
+  m_EditorClassIdentifier: 
+  Path: event:/Passos
+  guid: 40584134151f8047a283837f640d38bc
+  Banks:
+  - {fileID: -5598060165990462611}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 85
+  Length: 2505
+--- !u!114 &3824979712750364618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Espada hit 1
+  m_EditorClassIdentifier: 
+  Path: event:/Espada hit 1
+  guid: 6f3c76a943a47c42a5e2aa2f9c6b9eb6
+  Banks:
+  - {fileID: -5598060165990462611}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 632
 --- !u!114 &4688251545389864785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,6 +376,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 10
   Length: 14051
+--- !u!114 &5605173729982637497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Parry 2
+  m_EditorClassIdentifier: 
+  Path: event:/Parry 2
+  guid: 2411731e1888ae4889b9b91a629cc4bf
+  Banks:
+  - {fileID: -5598060165990462611}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 750
 --- !u!114 &6460278317219287402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,6 +465,52 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 34615
+--- !u!114 &7918429385343511389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Espada hit 2
+  m_EditorClassIdentifier: 
+  Path: event:/Espada hit 2
+  guid: 70be0e9de193f848ae3edd748e3fc6e1
+  Banks:
+  - {fileID: -5598060165990462611}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1140
+--- !u!114 &7958488470188722862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/fogo
+  m_EditorClassIdentifier: 
+  Path: event:/fogo
+  guid: e198a64569e9bd45bb29a315d30ccc18
+  Banks:
+  - {fileID: -5598060165990462611}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 60909
 --- !u!114 &8251917717648814303
 MonoBehaviour:
   m_ObjectHideFlags: 0

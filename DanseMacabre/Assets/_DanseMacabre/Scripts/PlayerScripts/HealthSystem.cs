@@ -45,7 +45,6 @@ public class HealthSystem : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         inputSystem = GetComponent<InputSystem>();
         colorMain = fillArea.color;
-
         slider.maxValue = maxHealth;
         sliderBack.maxValue = maxHealth;  
 
@@ -183,5 +182,11 @@ public class HealthSystem : MonoBehaviour
         pos.y = data.playerPos[1];
         pos.z = data.playerPos[2];
         transform.position = pos;
+    }
+
+    public void WalkSound()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/passos", GetComponent<Transform>().position);
+
     }
 }

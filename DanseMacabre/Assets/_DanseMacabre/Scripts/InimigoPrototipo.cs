@@ -77,6 +77,7 @@ public class InimigoPrototipo : MonoBehaviour
     {
         if (inv <= 0)
         {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Espada hit 2");
             m_health = health;
             health -= damage;
             inv = 0.5f;
