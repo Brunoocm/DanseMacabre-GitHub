@@ -11,12 +11,13 @@ GameObject:
   - component: {fileID: 5561551577798259743}
   - component: {fileID: 8827409470576573370}
   - component: {fileID: 6729984698983010160}
+  - component: {fileID: 7172746735517293398}
   m_Layer: 0
   m_Name: PilhaDeCorpos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &5561551577798259743
 Transform:
@@ -89,3 +90,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7172746735517293398
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5072540944341790373}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.7374635, y: 3.0677702, z: 2.666406}
+  m_Center: {x: -0.08725976, y: -0.0075889803, z: 0.21801011}

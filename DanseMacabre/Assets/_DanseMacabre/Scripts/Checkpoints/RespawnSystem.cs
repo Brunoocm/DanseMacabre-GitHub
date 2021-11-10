@@ -33,10 +33,10 @@ public class RespawnSystem : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            DieFunction(); //morre muito aqui
-        }
+        //if (Input.GetKeyDown(KeyCode.R))
+        //{
+        //    DieFunction(); //morre muito aqui
+        //}
     }
     public void DieFunction()
     {

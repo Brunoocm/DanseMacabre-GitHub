@@ -30,6 +30,7 @@ public class EnemyManager : MonoBehaviour
     public float minimumDetectionAngle = -50;
 
     public float currentRecoveryTime = 0;
+
     private void Awake()
     {
         enemyLocomotionManager = GetComponent<EnemyLocomotionManager>();

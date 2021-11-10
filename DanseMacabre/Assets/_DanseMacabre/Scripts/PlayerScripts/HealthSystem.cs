@@ -32,6 +32,7 @@ public class HealthSystem : MonoBehaviour
 
     public InputSystem inputSystem;
     public CombatSystem combatSystem;
+    public RespawnSystem respawnSystem;
     public bool isLock;
 
     private float inv;
@@ -41,6 +42,7 @@ public class HealthSystem : MonoBehaviour
     Rigidbody rb;
     private void Start()
     {
+        respawnSystem = FindObjectOfType<RespawnSystem>();
         anim = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody>();
         inputSystem = GetComponent<InputSystem>();
@@ -87,7 +89,7 @@ public class HealthSystem : MonoBehaviour
         {
             health = 0;
             m_health = 0;
-
+            respawnSystem.DieFunction();
             //MORRE MORRE MORRE
 
         }

@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DoorLocked : MonoBehaviour
 {
     public string doorName;
-
+    public UnityEvent events;
     Animator anim;
     void Start()
     {
@@ -21,6 +22,7 @@ public class DoorLocked : MonoBehaviour
     {
         print("open");
         anim.SetTrigger("Open");
+        events.Invoke();
         //Destroy(gameObject);
     }
 }

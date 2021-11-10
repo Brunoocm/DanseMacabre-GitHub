@@ -46,6 +46,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 78737
+--- !u!114 &-7657206747728919843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/OST - Battle over the Danse Macabre/Parameter 1
+  m_EditorClassIdentifier: 
+  Name: Parameter 1
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 0
 --- !u!114 &-6842073113793277112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92,6 +114,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 7560
+--- !u!114 &-6218115558498861575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/OST - Battle over the Danse Macabre
+  m_EditorClassIdentifier: 
+  Path: event:/OST - Battle over the Danse Macabre
+  guid: 2c94dba5f31b334180f9a791c565511f
+  Banks:
+  - {fileID: -5598060165990462611}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 100634
 --- !u!114 &-5598060165990462611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107,11 +152,33 @@ MonoBehaviour:
   Path: FMOD_Projects/DanseMacabreFMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637720847676773081
+  lastModified: 637721030008690864
   FileSizes:
   - Name: Desktop
-    Value: 5803968
+    Value: 7983840
   Exists: 1
+--- !u!114 &-5507539432204090492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/OST - Battle over the Danse Macabre/Parameter 1
+  m_EditorClassIdentifier: 
+  Name: Parameter 1
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 0
 --- !u!114 &-4742954570946587696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,11 +240,56 @@ MonoBehaviour:
   Path: FMOD_Projects/DanseMacabreFMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637720847676813089
+  lastModified: 637721030008730861
   FileSizes:
   - Name: Desktop
-    Value: 1556
+    Value: 1680
   Exists: 1
+--- !u!114 &-2268334166505675335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/OST - Battle over the Danse Macabre/Parameter 1
+  m_EditorClassIdentifier: 
+  Name: Parameter 1
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 0
+--- !u!114 &-1576981089759842328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/OST - The Dark Knight
+  m_EditorClassIdentifier: 
+  Path: event:/OST - The Dark Knight
+  guid: a13569abba56194a92564a93c3803aaa
+  Banks:
+  - {fileID: -5598060165990462611}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 66549
 --- !u!114 &-805524078633501403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,6 +333,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 18504
+--- !u!114 &-543126815745534445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/OST - Battle over the Danse Macabre/Parameter 1
+  m_EditorClassIdentifier: 
+  Name: Parameter 1
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,12 +389,14 @@ MonoBehaviour:
   - {fileID: -4426736008402465553}
   - {fileID: -4742954570946587696}
   - {fileID: 3933802133231465529}
+  - {fileID: -6218115558498861575}
+  - {fileID: -1576981089759842328}
   EditorParameters: []
   MasterBanks:
   - {fileID: -5598060165990462611}
   StringsBanks:
   - {fileID: -3606357991165475021}
-  stringsBankWriteTime: 637720847676813089
+  stringsBankWriteTime: 637721030008730861
   cacheVersion: 8
 --- !u!114 &220028707472374520
 MonoBehaviour:
@@ -512,6 +648,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 34615
+--- !u!114 &7690660646237938574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/OST - Battle over the Danse Macabre/Parameter 1
+  m_EditorClassIdentifier: 
+  Name: Parameter 1
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 0
 --- !u!114 &7918429385343511389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -581,3 +739,25 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 50
   Length: 2659
+--- !u!114 &9077736383431005692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/OST - Battle over the Danse Macabre/Parameter 1
+  m_EditorClassIdentifier: 
+  Name: Parameter 1
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 0

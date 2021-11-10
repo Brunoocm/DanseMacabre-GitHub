@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class InimigoPrototipo : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class InimigoPrototipo : MonoBehaviour
     public Slider sliderBack;
     public EnemyManager enemyManager;
     public DieState dieState;
+    public UnityEvent events;
 
     private Animator animator => GetComponent<Animator>();
     private float inv;
@@ -50,11 +52,13 @@ public class InimigoPrototipo : MonoBehaviour
             if (boss)
             {
                 enemyManager.currentState = dieState;
-
+                events.Invoke();
             }
             else
             {
-                Destroy(gameObject);
+                enemyManager.currentState = dieState;
+
+                //Destroy(gameObject);
 
             }
 
