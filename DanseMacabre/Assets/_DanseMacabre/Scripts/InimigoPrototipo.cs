@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using UnityEngine.AI;
 
 public class InimigoPrototipo : MonoBehaviour
 {
@@ -15,8 +16,8 @@ public class InimigoPrototipo : MonoBehaviour
     public EnemyManager enemyManager;
     public DieState dieState;
     public UnityEvent events;
-
     private Animator animator => GetComponent<Animator>();
+    private Rigidbody rb => GetComponent<Rigidbody>();
     private float inv;
 
     private void Start()
@@ -49,6 +50,15 @@ public class InimigoPrototipo : MonoBehaviour
         {
             health = 0;
             m_health = 0;
+
+            rb.constraints = RigidbodyConstraints.FreezeAll;
+            CapsuleCollider coll = GetComponent<CapsuleCollider>();
+            CapsuleCollider coll2 = GetComponentInChildren<CapsuleCollider>();
+            NavMeshAgent navMesh = GetComponentInChildren<NavMeshAgent>();
+            
+            Destroy(coll, 0.5f);
+            Destroy(coll2, 0.5f);
+            Destroy(navMesh, 0.5f);
             if (boss)
             {
                 enemyManager.currentState = dieState;

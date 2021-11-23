@@ -107,14 +107,16 @@ public class HealthSystem : MonoBehaviour
         {
             if (m_stamina > stamina)
             {
-                m_stamina -= 1.2f * Time.deltaTime;
+                m_stamina -= 2.3f * Time.deltaTime;
             }
         }
         else if (stamina <= 0)
         {
             recovery = true;
+            combatSystem.Block(false);
+
         }
-        
+
     }
 
     void RecoveryTime()
@@ -122,8 +124,8 @@ public class HealthSystem : MonoBehaviour
         if (recovery)
         {
             fillArea.color = Color.red;
-            stamina += 5.5f * Time.deltaTime;
-            m_stamina += 5.5f * Time.deltaTime;
+            stamina += 4f * Time.deltaTime;
+            m_stamina += 4f * Time.deltaTime;
         }
         else
         {

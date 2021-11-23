@@ -46,7 +46,10 @@ public class InputSystem : MonoBehaviour
         {
             if (!combatSystem.attacking)
             {
-                combatSystem.Block(true);
+                if (!healthSystem.recovery)
+                {
+                    combatSystem.Block(true);
+                }
 
             }
             else
