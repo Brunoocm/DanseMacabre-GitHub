@@ -1,5 +1,74 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8678571146688600136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/AudiosNovos/player morrer
+  m_EditorClassIdentifier: 
+  Path: event:/AudiosNovos/player morrer
+  guid: 572c79c83140614a995371687a650289
+  Banks:
+  - {fileID: -5598060165990462611}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 420
+--- !u!114 &-8084522369715834751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/AudiosNovos/golpe acertar 1
+  m_EditorClassIdentifier: 
+  Path: event:/AudiosNovos/golpe acertar 1
+  guid: 11859b100516b241a4e3b144e2868e55
+  Banks:
+  - {fileID: -5598060165990462611}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 334
+--- !u!114 &-8024623926280351544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/AudiosNovos/Falas/falas da morte 2
+  m_EditorClassIdentifier: 
+  Path: event:/AudiosNovos/Falas/falas da morte 2
+  guid: 04ac116f6f00704187aca51d07916fad
+  Banks:
+  - {fileID: -5598060165990462611}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6000
 --- !u!114 &-7935244960084461613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,6 +183,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 7560
+--- !u!114 &-6595849786109094207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/AudiosNovos/inimigo morrer 2
+  m_EditorClassIdentifier: 
+  Path: event:/AudiosNovos/inimigo morrer 2
+  guid: e78f89df2a21e94d91029ab5862e8dc5
+  Banks:
+  - {fileID: -5598060165990462611}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1006
 --- !u!114 &-6218115558498861575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,6 +229,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 100634
+--- !u!114 &-6085481638374918552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/AudiosNovos/golpes boss
+  m_EditorClassIdentifier: 
+  Path: event:/AudiosNovos/golpes boss
+  guid: 8343a86f5f4eef458e7849c030a468c8
+  Banks:
+  - {fileID: -5598060165990462611}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 9564
 --- !u!114 &-5598060165990462611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,10 +267,10 @@ MonoBehaviour:
   Path: FMOD_Projects/DanseMacabreFMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637721030008690864
+  lastModified: 637732945516213046
   FileSizes:
   - Name: Desktop
-    Value: 7983840
+    Value: 9254304
   Exists: 1
 --- !u!114 &-5507539432204090492
 MonoBehaviour:
@@ -216,8 +331,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: "event:/ambienta\xE7\xE3o guerra"
   guid: 34ab9290754c5c459a598993e0adceaf
-  Banks:
-  - {fileID: -5598060165990462611}
+  Banks: []
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -240,11 +354,34 @@ MonoBehaviour:
   Path: FMOD_Projects/DanseMacabreFMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637721030008730861
+  lastModified: 637732945516263053
   FileSizes:
   - Name: Desktop
-    Value: 1680
+    Value: 2514
   Exists: 1
+--- !u!114 &-2762485600576062380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Ambienta\xE7\xE3o guerra"
+  m_EditorClassIdentifier: 
+  Path: "event:/Ambienta\xE7\xE3o guerra"
+  guid: 34ab9290754c5c459a598993e0adceaf
+  Banks:
+  - {fileID: -5598060165990462611}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 63157
 --- !u!114 &-2268334166505675335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -374,7 +511,6 @@ MonoBehaviour:
   - {fileID: -7935244960084461613}
   - {fileID: 5114065255112616524}
   - {fileID: 4688251545389864785}
-  - {fileID: 7614322244458226386}
   - {fileID: 6460278317219287402}
   - {fileID: 5605173729982637497}
   - {fileID: -6834889845409489465}
@@ -386,18 +522,84 @@ MonoBehaviour:
   - {fileID: -7800338336800313938}
   - {fileID: 2587485707027264841}
   - {fileID: 7958488470188722862}
-  - {fileID: -4426736008402465553}
   - {fileID: -4742954570946587696}
   - {fileID: 3933802133231465529}
   - {fileID: -6218115558498861575}
   - {fileID: -1576981089759842328}
+  - {fileID: 1966516885060730934}
+  - {fileID: -8084522369715834751}
+  - {fileID: -2762485600576062380}
+  - {fileID: 33652876220784496}
+  - {fileID: 3644268965354590031}
+  - {fileID: 6008166315428272936}
+  - {fileID: 4207877995004801074}
+  - {fileID: -8678571146688600136}
+  - {fileID: 1890649303847803454}
+  - {fileID: 7682601754182896387}
+  - {fileID: 3930692162618599236}
+  - {fileID: -6085481638374918552}
+  - {fileID: 2766843848343619452}
+  - {fileID: -6595849786109094207}
+  - {fileID: 4146960493459729191}
+  - {fileID: -8024623926280351544}
+  - {fileID: 8919471112072779790}
+  - {fileID: 2210813138269674416}
+  - {fileID: 8829626496637783371}
+  - {fileID: 2911556697936289820}
+  - {fileID: 192687433931534467}
   EditorParameters: []
   MasterBanks:
   - {fileID: -5598060165990462611}
   StringsBanks:
   - {fileID: -3606357991165475021}
-  stringsBankWriteTime: 637721030008730861
+  stringsBankWriteTime: 637732945516263053
   cacheVersion: 8
+--- !u!114 &33652876220784496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/AudiosNovos/corpo cair
+  m_EditorClassIdentifier: 
+  Path: event:/AudiosNovos/corpo cair
+  guid: 44ac87be0f9ea14c8b3e101f2e35a9cf
+  Banks:
+  - {fileID: -5598060165990462611}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 452
+--- !u!114 &192687433931534467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/AudiosNovos/Falas/falas da morte 6
+  m_EditorClassIdentifier: 
+  Path: event:/AudiosNovos/Falas/falas da morte 6
+  guid: ea04c214a69a1f478c7ce641d288c20f
+  Banks:
+  - {fileID: -5598060165990462611}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 7400
 --- !u!114 &220028707472374520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -421,6 +623,75 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 10972
+--- !u!114 &1890649303847803454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/AudiosNovos/golpe acertar 3
+  m_EditorClassIdentifier: 
+  Path: event:/AudiosNovos/golpe acertar 3
+  guid: 587da9a520193e48bcf0353ce134bdfa
+  Banks:
+  - {fileID: -5598060165990462611}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 260
+--- !u!114 &1966516885060730934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/AudiosNovos/Falas/TodasAsFalas
+  m_EditorClassIdentifier: 
+  Path: event:/AudiosNovos/Falas/TodasAsFalas
+  guid: 1087fd97e552144782527d9344bc8675
+  Banks:
+  - {fileID: -5598060165990462611}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 7600
+--- !u!114 &2210813138269674416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/AudiosNovos/Falas/falas da morte 3
+  m_EditorClassIdentifier: 
+  Path: event:/AudiosNovos/Falas/falas da morte 3
+  guid: 3028ccef850d8f43a676f6d0fb047e42
+  Banks:
+  - {fileID: -5598060165990462611}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6000
 --- !u!114 &2587485707027264841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -444,6 +715,52 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1218
+--- !u!114 &2766843848343619452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/AudiosNovos/player tomar dano
+  m_EditorClassIdentifier: 
+  Path: event:/AudiosNovos/player tomar dano
+  guid: 89eea70c9435e6448defcc8baa765718
+  Banks:
+  - {fileID: -5598060165990462611}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1008
+--- !u!114 &2911556697936289820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/AudiosNovos/Falas/falas da morte 5
+  m_EditorClassIdentifier: 
+  Path: event:/AudiosNovos/Falas/falas da morte 5
+  guid: bb19d2ef53ba2f498e5d6fbcac1c0497
+  Banks:
+  - {fileID: -5598060165990462611}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 7000
 --- !u!114 &3236183567006777380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -467,6 +784,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 85
   Length: 2505
+--- !u!114 &3644268965354590031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Ambienta\xE7\xE3o limbo + gritos"
+  m_EditorClassIdentifier: 
+  Path: "event:/Ambienta\xE7\xE3o limbo + gritos"
+  guid: 48a3d59952bd0c4e9cbfa718dd072bfb
+  Banks:
+  - {fileID: -5598060165990462611}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 34615
 --- !u!114 &3824979712750364618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -490,6 +830,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 632
+--- !u!114 &3930692162618599236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/AudiosNovos/inimigo morrer
+  m_EditorClassIdentifier: 
+  Path: event:/AudiosNovos/inimigo morrer
+  guid: 6ba120475c50054d9ecbf22b3cec28a3
+  Banks:
+  - {fileID: -5598060165990462611}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 790
 --- !u!114 &3933802133231465529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -513,6 +876,52 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1100
+--- !u!114 &4146960493459729191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/AudiosNovos/inimigo morrer 3
+  m_EditorClassIdentifier: 
+  Path: event:/AudiosNovos/inimigo morrer 3
+  guid: ed17cdfa8c9fe94da4a85faaee6fcfe1
+  Banks:
+  - {fileID: -5598060165990462611}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 157
+--- !u!114 &4207877995004801074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/AudiosNovos/inimigo morrer 4
+  m_EditorClassIdentifier: 
+  Path: event:/AudiosNovos/inimigo morrer 4
+  guid: 54debb62562f4747b5ba911ceed56c41
+  Banks:
+  - {fileID: -5598060165990462611}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 237
 --- !u!114 &4688251545389864785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -582,6 +991,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 750
+--- !u!114 &6008166315428272936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/AudiosNovos/golpe acertar 2
+  m_EditorClassIdentifier: 
+  Path: event:/AudiosNovos/golpe acertar 2
+  guid: 501bc51fca87ae41af2cbac9682040ce
+  Banks:
+  - {fileID: -5598060165990462611}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 337
 --- !u!114 &6460278317219287402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -639,8 +1071,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: "event:/ambienta\xE7\xE3o limbo + gritos"
   guid: 48a3d59952bd0c4e9cbfa718dd072bfb
-  Banks:
-  - {fileID: -5598060165990462611}
+  Banks: []
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -648,6 +1079,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 34615
+--- !u!114 &7682601754182896387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/AudiosNovos/player tomar dano 2
+  m_EditorClassIdentifier: 
+  Path: event:/AudiosNovos/player tomar dano 2
+  guid: 63355c00db9ccb4c92e6b9127cb6705c
+  Banks:
+  - {fileID: -5598060165990462611}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 232
 --- !u!114 &7690660646237938574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -739,6 +1193,52 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 50
   Length: 2659
+--- !u!114 &8829626496637783371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/AudiosNovos/Falas/falas da morte 4
+  m_EditorClassIdentifier: 
+  Path: event:/AudiosNovos/Falas/falas da morte 4
+  guid: b942b3f9c2a7e04ebd42fde137d9c43d
+  Banks:
+  - {fileID: -5598060165990462611}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6000
+--- !u!114 &8919471112072779790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/AudiosNovos/Falas/falas da morte 7
+  m_EditorClassIdentifier: 
+  Path: event:/AudiosNovos/Falas/falas da morte 7
+  guid: 26bfc58752ec3f419d1d71f8fc849959
+  Banks:
+  - {fileID: -5598060165990462611}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 128730
 --- !u!114 &9077736383431005692
 MonoBehaviour:
   m_ObjectHideFlags: 0
