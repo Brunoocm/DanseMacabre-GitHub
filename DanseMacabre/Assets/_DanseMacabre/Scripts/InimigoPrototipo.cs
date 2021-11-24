@@ -59,6 +59,8 @@ public class InimigoPrototipo : MonoBehaviour
             Destroy(coll, 0.5f);
             Destroy(coll2, 0.5f);
             Destroy(navMesh, 0.5f);
+
+            healthBar.SetActive(false);
             if (boss)
             {
                 enemyManager.currentState = dieState;
