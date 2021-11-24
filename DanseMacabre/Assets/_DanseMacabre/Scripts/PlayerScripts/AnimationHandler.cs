@@ -19,6 +19,10 @@ public class AnimationHandler : MonoBehaviour
     private bool inCombat;
     HealthSystem healthSystem => GetComponentInChildren<HealthSystem>();
 
+    private void Start()
+    {
+
+    }
     private void Update()
     {
         SetCombatState();

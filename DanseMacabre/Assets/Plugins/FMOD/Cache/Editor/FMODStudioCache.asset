@@ -267,7 +267,7 @@ MonoBehaviour:
   Path: FMOD_Projects/DanseMacabreFMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637732945516213046
+  lastModified: 637733623462779964
   FileSizes:
   - Name: Desktop
     Value: 9254304
@@ -354,7 +354,7 @@ MonoBehaviour:
   Path: FMOD_Projects/DanseMacabreFMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637732945516263053
+  lastModified: 637733623462840018
   FileSizes:
   - Name: Desktop
     Value: 2514
@@ -552,7 +552,7 @@ MonoBehaviour:
   - {fileID: -5598060165990462611}
   StringsBanks:
   - {fileID: -3606357991165475021}
-  stringsBankWriteTime: 637732945516263053
+  stringsBankWriteTime: 637733623462840018
   cacheVersion: 8
 --- !u!114 &33652876220784496
 MonoBehaviour:

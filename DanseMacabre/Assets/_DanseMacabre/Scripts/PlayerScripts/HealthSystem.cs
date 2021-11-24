@@ -46,6 +46,10 @@ public class HealthSystem : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody>();
         inputSystem = GetComponent<InputSystem>();
+
+        DesableMove();
+        anim.SetTrigger("WakeUp");
+
         colorMain = fillArea.color;
         slider.maxValue = maxHealth;
         sliderBack.maxValue = maxHealth;  
