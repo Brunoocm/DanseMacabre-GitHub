@@ -6,6 +6,7 @@ using UnityEngine;
 public class CombatSystem : MonoBehaviour
 {
     [Header("Combat Info")]
+    public bool canAttack;
     public bool inCombat;
     public bool attacking;
     public bool blocking;
@@ -23,6 +24,7 @@ public class CombatSystem : MonoBehaviour
     {
         hasEnemy = currentEnemy.enemy != null ? true : false;
         currentEnemy.UpdateEnemy(currentEnemy.enemy);
+        canAttack = GetComponent<SwordController>().canAttack;
         CombatState();
     }
 
@@ -93,7 +95,7 @@ public class CombatSystem : MonoBehaviour
 
     public void TryAttack()
     {
-        if (!blocking) //coloquei if(!blocking) pra nao ativar no meio da espadada
+        if (!blocking && canAttack) //coloquei if(!blocking) pra nao ativar no meio da espadada
         {
             if (attacking && attackType < 2)
             {
@@ -131,6 +133,8 @@ public class CombatSystem : MonoBehaviour
 
     public void Block(bool value)
     {
+        if (!canAttack && value) return;
+
         blocking = value;
     }
 

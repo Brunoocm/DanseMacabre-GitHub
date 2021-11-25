@@ -5,37 +5,31 @@ using UnityEngine.Video;
 
 public class Cutscene : MonoBehaviour
 {
-    public VideoClip videoItem;
-
+    public VideoClip[] cutscenes;
+    public GameObject fim;
+    [HideInInspector] public int currentCutscene;
     VideoScene UIvid;
     Camera mainCam;
-
 
     void Start()
     {
         mainCam = Camera.main;
         UIvid = FindObjectOfType<VideoScene>();
+        currentCutscene = 0;
         //if (videoItem != null) Video Player;
-        PlayVideo();
-
     }
 
-    private void Update()
-    {
-      
-
-    }
-
-
-
-    void PlayVideo()
+    public void PlayVideo()
     {
         UIvid.vidObject.SetActive(true);
-        UIvid.SetVideo(videoItem);
+        UIvid.SetVideo(cutscenes[currentCutscene]);
         Time.timeScale = 0;
-
+        currentCutscene++;
+        if (currentCutscene > cutscenes.Length) Fim();
     }
 
-  
-
+    public void Fim()
+    {
+        fim.SetActive(true);
+    }
 }

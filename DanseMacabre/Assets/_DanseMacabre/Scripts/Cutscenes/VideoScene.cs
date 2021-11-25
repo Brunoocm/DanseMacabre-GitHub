@@ -8,21 +8,11 @@ using UnityEngine.Video;
 public class VideoScene : MonoBehaviour
 {
     public GameObject vidObject;
-
     public VideoPlayer vid;
-
-
-    void Start()
-    {
-    }
 
     void Update()
     {
-        if ((vid.frame) > 0 && (vid.isPlaying == false))
-        {
-            ExitVideo();
-
-        }
+        if ((vid.frame) > 0 && (vid.isPlaying == false)) ExitVideo();
     }
 
     public void SetVideo(VideoClip vidRender)

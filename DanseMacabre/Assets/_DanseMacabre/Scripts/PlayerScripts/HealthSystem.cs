@@ -28,12 +28,13 @@ public class HealthSystem : MonoBehaviour
 
     public Image fillArea;
     Color colorMain;
-  
+
 
     public InputSystem inputSystem;
     public CombatSystem combatSystem;
     public RespawnSystem respawnSystem;
     public bool isLock;
+    public bool imortal;
 
     private float inv;
 
@@ -52,7 +53,7 @@ public class HealthSystem : MonoBehaviour
 
         colorMain = fillArea.color;
         slider.maxValue = maxHealth;
-        sliderBack.maxValue = maxHealth;  
+        sliderBack.maxValue = maxHealth;
 
         sliderStamina.maxValue = maxStamina;
         sliderBackStamina.maxValue = maxStamina;
@@ -64,7 +65,7 @@ public class HealthSystem : MonoBehaviour
         HealthBar();
         StaminaBar();
 
-        if(m_stamina <= stamina && stamina < maxStamina)
+        if (m_stamina <= stamina && stamina < maxStamina)
         {
             stamina += 5.5f * Time.deltaTime;
             m_stamina += 5.5f * Time.deltaTime;
@@ -139,7 +140,7 @@ public class HealthSystem : MonoBehaviour
     }
     public void TakeDamage(int dano)
     {
-        if (!combatSystem.blocking)
+        if (!combatSystem.blocking && !imortal)
         {
             if (inv <= 0)
             {
@@ -167,13 +168,13 @@ public class HealthSystem : MonoBehaviour
     {
         inputSystem.enabled = true;
 
-    } 
+    }
     public void DesableMove()
     {
         inputSystem.enabled = false;
 
     }
- 
+
     public void SavePlayer()
     {
         SaveSystem.SavePlayer(this);
