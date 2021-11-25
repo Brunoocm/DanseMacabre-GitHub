@@ -17,6 +17,7 @@ public class CombatSystem : MonoBehaviour
     public Enemy currentEnemy;
     public bool hasEnemy;
 
+
     private HealthSystem healthSystem => GetComponent<HealthSystem>();
     private void Update()
     {
@@ -57,8 +58,27 @@ public class CombatSystem : MonoBehaviour
     //Futuramente ir� fazer as verifica��es necess�rias para escolher o alvo de combate
     public void TryTarget()
     {
-        if (currentEnemy != null)
-            currentEnemy.UpdateEnemy(GameObject.FindGameObjectWithTag("LockEnemy"));
+        // if (currentEnemy != null || !GameObject.FindGameObjectWithTag("LockEnemy")) return;
+
+        Debug.Log("TryTarget");
+        List<GameObject> inimigos = new List<GameObject>();
+        inimigos.AddRange(GameObject.FindGameObjectsWithTag("LockEnemy"));
+
+        float closestDistanceSqr = Mathf.Infinity;
+        Vector3 currentPosition = transform.position;
+
+        foreach (GameObject inimigo in inimigos)
+        {
+            Vector3 directionToTarget = inimigo.transform.position - currentPosition;
+            float dSqrToTarget = directionToTarget.sqrMagnitude;
+            if (dSqrToTarget < closestDistanceSqr)
+            {
+                closestDistanceSqr = dSqrToTarget;
+                currentEnemy.UpdateEnemy(inimigo);
+                Debug.Log("Update Enemy");
+            }
+        }
+
 
         if (hasEnemy)
             UnlockTarget();
@@ -77,21 +97,21 @@ public class CombatSystem : MonoBehaviour
         {
             if (attacking && attackType < 2)
             {
-              
+
                 if ((attackType + 1) <= totalAttacks)
                 {
-                    
-                        attackType++;
-                        attacking = true;
-                    
-                }
-            }
-            else if(attackType < 2)
-            {             
-               
+
                     attackType++;
                     attacking = true;
-                
+
+                }
+            }
+            else if (attackType < 2)
+            {
+
+                attackType++;
+                attacking = true;
+
             }
             //else if(attackType == 2)
             //{
